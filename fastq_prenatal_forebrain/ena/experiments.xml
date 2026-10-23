@@ -1,0 +1,2626 @@
+<EXPERIMENT_SET>
+<EXPERIMENT accession="ERX2614332" alias="E-MTAB-6814:5664sTS.Human.Forebrain.10w.Female_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614332</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5664sTS.Human.Forebrain.10w.Female_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510157">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510157</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4689973</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5664sTS.Human.Forebrain.10w.Female_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510157</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614332&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614332&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>10 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>female</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614350" alias="E-MTAB-6814:2047sTS.Human.Forebrain.11w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614350</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:2047sTS.Human.Forebrain.11w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510175">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510175</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4689991</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>2047sTS.Human.Forebrain.11w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510175</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614350&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614350&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>11 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614351" alias="E-MTAB-6814:2111sTS.Human.Forebrain.11w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614351</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:2111sTS.Human.Forebrain.11w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510176">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510176</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4689992</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>2111sTS.Human.Forebrain.11w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510176</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614351&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614351&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>11 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614352" alias="E-MTAB-6814:5952sTS.Human.Forebrain.11w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614352</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5952sTS.Human.Forebrain.11w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510177">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510177</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4689993</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5952sTS.Human.Forebrain.11w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510177</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614352&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614352&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>11 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614353" alias="E-MTAB-6814:5953sTS.Human.Forebrain.11w.Female_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614353</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5953sTS.Human.Forebrain.11w.Female_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510178">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510178</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4689994</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5953sTS.Human.Forebrain.11w.Female_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510178</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614353&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614353&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>11 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>female</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614370" alias="E-MTAB-6814:5721sTS.Human.Forebrain.12w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614370</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5721sTS.Human.Forebrain.12w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510195">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510195</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690011</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5721sTS.Human.Forebrain.12w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510195</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614370&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614370&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>12 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614383" alias="E-MTAB-6814:5711sTS.Human.Forebrain.13w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614383</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5711sTS.Human.Forebrain.13w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510208">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510208</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690024</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5711sTS.Human.Forebrain.13w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510208</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614383&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614383&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>13 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614384" alias="E-MTAB-6814:5939sTS.Human.Forebrain.13w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614384</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5939sTS.Human.Forebrain.13w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510209">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510209</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690025</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5939sTS.Human.Forebrain.13w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510209</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614384&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614384&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>13 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614385" alias="E-MTAB-6814:5955sTS.Human.Forebrain.13w.Female_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614385</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5955sTS.Human.Forebrain.13w.Female_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510210">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510210</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690026</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5955sTS.Human.Forebrain.13w.Female_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510210</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614385&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614385&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>13 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>female</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614401" alias="E-MTAB-6814:5665sTSm.Human.Forebrain.16w.Female_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614401</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5665sTSm.Human.Forebrain.16w.Female_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510226">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510226</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690042</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5665sTSm.Human.Forebrain.16w.Female_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510226</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614401&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614401&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>16 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>female</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614402" alias="E-MTAB-6814:5951sTS.Human.Forebrain.16w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614402</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5951sTS.Human.Forebrain.16w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510227">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510227</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690043</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5951sTS.Human.Forebrain.16w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510227</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614402&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614402&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>16 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614418" alias="E-MTAB-6814:5667sTS.Human.Forebrain.18w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614418</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5667sTS.Human.Forebrain.18w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510243">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510243</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690059</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5667sTS.Human.Forebrain.18w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510243</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614418&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614418&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>18 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614429" alias="E-MTAB-6814:5768sTS.Human.Brain.19w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614429</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5768sTS.Human.Brain.19w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510254">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510254</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690070</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5768sTS.Human.Brain.19w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510254</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614429&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614429&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>19 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614430" alias="E-MTAB-6814:5782sTS.Human.Brain.19w.Female_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614430</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5782sTS.Human.Brain.19w.Female_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510255">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510255</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690071</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5782sTS.Human.Brain.19w.Female_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510255</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614430&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614430&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>19 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>female</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614431" alias="E-MTAB-6814:5960sTS.Human.Brain.19w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614431</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5960sTS.Human.Brain.19w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510256">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510256</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690072</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5960sTS.Human.Brain.19w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510256</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614431&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614431&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>19 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614432" alias="E-MTAB-6814:5668sTS.Human.Brain.20w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614432</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5668sTS.Human.Brain.20w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510257">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510257</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690073</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5668sTS.Human.Brain.20w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510257</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614432&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614432&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>19 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614433" alias="E-MTAB-6814:5770sTS.Human.Brain.20w.Female_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614433</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5770sTS.Human.Brain.20w.Female_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510258">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510258</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690074</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5770sTS.Human.Brain.20w.Female_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510258</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614433&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614433&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>19 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>female</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614445" alias="E-MTAB-6814:3587sTS.Human.Forebrain.CS13.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614445</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:3587sTS.Human.Forebrain.CS13.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510270">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510270</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690086</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>3587sTS.Human.Forebrain.CS13.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510270</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614445&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614445&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>4 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614446" alias="E-MTAB-6814:5624sTS.Human.Forebrain.4w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614446</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5624sTS.Human.Forebrain.4w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510271">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510271</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690087</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5624sTS.Human.Forebrain.4w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510271</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614446&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614446&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>4 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614447" alias="E-MTAB-6814:6096sTS.Human.Forebrain.4w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614447</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:6096sTS.Human.Forebrain.4w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510272">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510272</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690088</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>6096sTS.Human.Forebrain.4w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510272</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614447&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614447&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>4 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614461" alias="E-MTAB-6814:3669sTS.Human.Forebrain.CS16.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614461</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:3669sTS.Human.Forebrain.CS16.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510286">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510286</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690102</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>3669sTS.Human.Forebrain.CS16.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510286</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614461&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614461&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>5 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614462" alias="E-MTAB-6814:5628sTS.Human.Forebrain.5w.Female_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614462</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:5628sTS.Human.Forebrain.5w.Female_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510287">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510287</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690103</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>5628sTS.Human.Forebrain.5w.Female_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510287</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614462&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614462&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>5 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>female</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614487" alias="E-MTAB-6814:2026sTSm.Human.Forebrain.CS21.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614487</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:2026sTSm.Human.Forebrain.CS21.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510312">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510312</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690128</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>2026sTSm.Human.Forebrain.CS21.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510312</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614487&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614487&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>7 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614488" alias="E-MTAB-6814:3571sTS.Human.Forebrain.CS20.Female_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614488</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:3571sTS.Human.Forebrain.CS20.Female_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510313">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510313</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690129</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>3571sTS.Human.Forebrain.CS20.Female_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510313</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614488&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614488&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>7 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>female</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614489" alias="E-MTAB-6814:3636sTS.Human.Forebrain.CS21.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614489</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:3636sTS.Human.Forebrain.CS21.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510314">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510314</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690130</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>3636sTS.Human.Forebrain.CS21.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510314</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614489&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614489&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>7 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614507" alias="E-MTAB-6814:2034sTS.Human.Forebrain.CS22.Female_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614507</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:2034sTS.Human.Forebrain.CS22.Female_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510332">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510332</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690148</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>2034sTS.Human.Forebrain.CS22.Female_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510332</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614507&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614507&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>8 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>female</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614508" alias="E-MTAB-6814:2080sTS.Human.Brain.CS23.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614508</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:2080sTS.Human.Brain.CS23.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510333">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510333</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690149</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>2080sTS.Human.Brain.CS23.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510333</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614508&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614508&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>8 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614509" alias="E-MTAB-6814:2086sTSm.Human.Brain.CS23.Female_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614509</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:2086sTSm.Human.Brain.CS23.Female_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510334">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510334</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690150</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>2086sTSm.Human.Brain.CS23.Female_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510334</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614509&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614509&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>8 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>female</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614510" alias="E-MTAB-6814:2035sTSm.Human.Forebrain.8w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614510</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:2035sTSm.Human.Forebrain.8w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510335">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510335</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690151</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>2035sTSm.Human.Forebrain.8w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510335</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614510&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614510&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>8 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614531" alias="E-MTAB-6814:2041sTSb.Human.Brain.9w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614531</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:2041sTSb.Human.Brain.9w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510356">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510356</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690173</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>2041sTSb.Human.Brain.9w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510356</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614531&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614531&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>9 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614532" alias="E-MTAB-6814:2050sTS.Human.Forebrain.9w.Female_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614532</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:2050sTS.Human.Forebrain.9w.Female_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510357">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510357</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690174</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>2050sTS.Human.Forebrain.9w.Female_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510357</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614532&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614532&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>9 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>female</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+<EXPERIMENT accession="ERX2614533" alias="E-MTAB-6814:2068sTS.Human.Brain.9w.Male_s" broker_name="ArrayExpress" center_name="European Bioinformatics Institute">
+  <IDENTIFIERS>
+    <PRIMARY_ID>ERX2614533</PRIMARY_ID>
+    <SUBMITTER_ID namespace="European Bioinformatics Institute">E-MTAB-6814:2068sTS.Human.Brain.9w.Male_s</SUBMITTER_ID>
+  </IDENTIFIERS>
+  <TITLE>Human RNA-seq time-series of the development of seven major organs</TITLE>
+  <STUDY_REF accession="ERP109002">
+    <IDENTIFIERS>
+      <PRIMARY_ID>ERP109002</PRIMARY_ID>
+      <SECONDARY_ID>PRJEB26969</SECONDARY_ID>
+    </IDENTIFIERS>
+  </STUDY_REF>
+  <DESIGN>
+    <DESIGN_DESCRIPTION>Human RNA-seq time-series of the development of seven major organs</DESIGN_DESCRIPTION>
+    <SAMPLE_DESCRIPTOR accession="ERS2510358">
+      <IDENTIFIERS>
+        <PRIMARY_ID>ERS2510358</PRIMARY_ID>
+        <EXTERNAL_ID namespace="BioSample">SAMEA4690175</EXTERNAL_ID>
+      </IDENTIFIERS>
+    </SAMPLE_DESCRIPTOR>
+    <LIBRARY_DESCRIPTOR>
+      <LIBRARY_NAME>2068sTS.Human.Brain.9w.Male_s</LIBRARY_NAME>
+      <LIBRARY_STRATEGY>ssRNA-seq</LIBRARY_STRATEGY>
+      <LIBRARY_SOURCE>TRANSCRIPTOMIC</LIBRARY_SOURCE>
+      <LIBRARY_SELECTION>PolyA</LIBRARY_SELECTION>
+      <LIBRARY_LAYOUT>
+        <SINGLE/>
+      </LIBRARY_LAYOUT>
+      <LIBRARY_CONSTRUCTION_PROTOCOL>The organs were dissected from 23 developmental stages (starting at 4 weeks post conception until 58-63 years of age). The prenatal brain was divided into two regions: forebrain together with the midbrain (referred to as the ‘brain’) and hindbrain (referred to as the ‘cerebellum’). The postnatal ‘brain’ and ‘cerebellum’ samples comprise the dorsolateral prefrontal region of the cerebral cortex and lateral cerebellar cortex, respectively. RNA was extracted using the RNeasy protocol from QIAGEN. RNeasy Micro columns were used to extract RNA from small (&lt; 5 mg) or fibrous samples and RNeasy Mini columns were used to extract RNA from larger samples. The tissues were homogenized in RLT buffer supplemented with 40 mM dithiothreitol (DTT) or QIAzol. The RNA-seq libraries were created using the TruSeq Stranded mRNA LT Sample Prep Kit (Illumina).</LIBRARY_CONSTRUCTION_PROTOCOL>
+    </LIBRARY_DESCRIPTOR>
+  </DESIGN>
+  <PLATFORM>
+    <ILLUMINA>
+      <INSTRUMENT_MODEL>Illumina HiSeq 2500</INSTRUMENT_MODEL>
+    </ILLUMINA>
+  </PLATFORM>
+  <PROCESSING/>
+  <EXPERIMENT_LINKS>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SAMPLE</DB>
+        <ID>ERS2510358</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMISSION</DB>
+        <ID>ERA1500097</ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-FASTQ-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614533&result=read_run&fields=run_accession,fastq_ftp,fastq_md5,fastq_bytes]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+    <EXPERIMENT_LINK>
+      <XREF_LINK>
+        <DB>ENA-SUBMITTED-FILES</DB>
+        <ID><![CDATA[https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERX2614533&result=read_run&fields=run_accession,submitted_ftp,submitted_md5,submitted_bytes,submitted_format]]></ID>
+      </XREF_LINK>
+    </EXPERIMENT_LINK>
+  </EXPERIMENT_LINKS>
+  <EXPERIMENT_ATTRIBUTES>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: developmental stage</TAG>
+      <VALUE>9 week post conception</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: organism part</TAG>
+      <VALUE>forebrain</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>Experimental Factor: sex</TAG>
+      <VALUE>male</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+    <EXPERIMENT_ATTRIBUTE>
+      <TAG>ENA-STATUS</TAG>
+      <VALUE>PUBLIC</VALUE>
+    </EXPERIMENT_ATTRIBUTE>
+  </EXPERIMENT_ATTRIBUTES>
+</EXPERIMENT>
+</EXPERIMENT_SET>
