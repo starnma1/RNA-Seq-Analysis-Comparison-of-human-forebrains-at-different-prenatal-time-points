@@ -18,6 +18,7 @@
 #   OUTDIR/ena/experiments.xml       ENA XML records for the experiments (ERX)
 #   OUTDIR/ena/samples.xml           ENA XML records for the samples (ERS)
 #   OUTDIR/fastq/<run>_<name>.fastq.gz
+#   OUTDIR/download-fastq.log       script output and errors
 #
 # Environment options:
 #   JOBS=2        parallel FASTQ downloads (default 2; EBI throttles heavy use)
@@ -50,8 +51,10 @@ BROWSER="https://www.ebi.ac.uk/ena/browser/api"
 ENA_DIR="${OUTDIR}/ena"
 FQ_DIR="${OUTDIR}/fastq"
 META="${ENA_DIR}/read_run.tsv"
+LOG_FILE="${OUTDIR}/download-fastq.log"
 
 mkdir -p "$ENA_DIR" "$FQ_DIR"
+exec >>"$LOG_FILE" 2>&1
 
 # Shared curl options. --retry covers 408/429/500/502/503/504 and timeouts;
 # without --retry-delay curl backs off exponentially and obeys Retry-After.
@@ -217,24 +220,50 @@ download_one() {
     done
   fi
 
-  if [[ "$SKIP_MD5" != "1" ]]; then
-    local expected actual
+  echo "[done] ${run}: download complete; checksum validation follows"
+}
+
+validate_fastqs() {
+  local failed=0 run name out done_flag expected actual
+
+  while IFS=$'\t' read -r run name _; do
+    out="${FQ_DIR}/${run}_${name}.fastq.gz"
+    done_flag="${out}.done"
+
+    if [[ ! -s "$out" ]]; then
+      echo "[FAIL] ${run}: FASTQ is missing or empty"
+      rm -f "$done_flag"
+      failed=1
+      continue
+    fi
+
+    if [[ "$SKIP_MD5" == "1" ]]; then
+      echo "[skip] ${run}: checksum validation disabled"
+      touch "$done_flag"
+      continue
+    fi
+
     expected=$(meta_field "$run" fastq_md5)
     if [[ -z "$expected" ]]; then
-      # Leave it unmarked so the next run verifies it once metadata is available.
-      echo "[warn] ${run}: no MD5 in ENA metadata yet; downloaded but not verified (re-run to verify)" >&2
-      return 0
-    else
-      actual=$(md5_of "$out")
-      if [[ "$expected" != "$actual" ]]; then
-        echo "[FAIL] ${run}: MD5 mismatch (expected ${expected}, got ${actual}); deleting" >&2
-        rm -f "$out"
-        return 1
-      fi
+      echo "[FAIL] ${run}: no MD5 checksum in ENA metadata"
+      rm -f "$done_flag"
+      failed=1
+      continue
     fi
-  fi
-  touch "$done_flag"
-  echo "[ ok ] ${run}"
+
+    actual=$(md5_of "$out")
+    if [[ "$expected" != "$actual" ]]; then
+      echo "[FAIL] ${run}: MD5 mismatch (expected ${expected}, got ${actual}); deleting"
+      rm -f "$out" "$done_flag"
+      failed=1
+      continue
+    fi
+
+    touch "$done_flag"
+    echo "[ ok ] ${run}: MD5 verified"
+  done < <(tail -n +2 "$SAMPLE_SHEET")
+
+  return "$failed"
 }
 
 export -f download_one md5_of meta_field file_size
@@ -242,8 +271,19 @@ export FQ_DIR META BASE DRY_RUN SKIP_MD5 JOBS LIMIT_RATE
 export CURL_OPTS_STR="${CURL_OPTS[*]}"
 
 echo "Downloading ${N_RUNS} FASTQs to ${FQ_DIR}/ with ${JOBS} parallel jobs"
+download_status=0
 tail -n +2 "$SAMPLE_SHEET" | cut -f1,2 | awk -F'\t' '{print $1"\t"$2"\t"NR-1}' \
   | xargs -P "$JOBS" -L 1 bash -c 'read -ra CURL_OPTS <<< "$CURL_OPTS_STR"; download_one "$0" "$1" "$2"' \
-  || { echo "Some downloads failed; re-run the script to resume them." >&2; exit 1; }
+  || download_status=$?
 
-echo "All done. Sample sheet: ${SAMPLE_SHEET}  ENA metadata: ${ENA_DIR}/"
+validation_status=0
+if [[ "$DRY_RUN" != "1" ]] && ! validate_fastqs; then
+  validation_status=1
+fi
+
+if [[ "$download_status" -ne 0 || "$validation_status" -ne 0 ]]; then
+  echo "[FAIL] Download or checksum validation failed; re-run the script to resume."
+  exit 1
+fi
+
+echo "All done. Sample sheet: ${SAMPLE_SHEET}  ENA metadata: ${ENA_DIR}/  Log: ${LOG_FILE}"
