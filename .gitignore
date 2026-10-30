@@ -2,4 +2,11 @@
 fastq_prenatal_forebrain/fastq/
 *.log
 micromamba/
+
+# Reference genome
+*.fa.gz
 *.fa
+
+# STAR files
+star-index/
+_STARtmp/
