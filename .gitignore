@@ -1,5 +1,5 @@
 .DS_Store
-fastq_prenatal_forebrain/fastq/
+raw/fastq/
 *.log
 micromamba/
 
@@ -10,3 +10,11 @@ micromamba/
 # STAR files
 star-index/
 _STARtmp/
+
+# FASTQC files
+quality_control/fastqc/
+quality_control/logs/
+quality_control/multiqc/fastq_qc_report_data/*
+!quality_control/multiqc/fastq_qc_report_data/multiqc_general_stats.txt
+!quality_control/multiqc/fastq_qc_report_data/multiqc_fastqc.txt
+!quality_control/multiqc/fastq_qc_report_data/multiqc_software_versions.txt

@@ -10,7 +10,7 @@
 set -euo pipefail
 
 cd "$SLURM_SUBMIT_DIR"                       # the quality_control folder
-FASTQ_DIR=../fastq_prenatal_forebrain/fastq
+FASTQ_DIR=../raw/fastq
 FASTQC_DIR=./fastqc
 MULTIQC_DIR=./multiqc
 STEP=${STEP:-fastqc}

@@ -38,7 +38,7 @@
 # =============================================================================
 set -euo pipefail
 
-OUTDIR="${1:-fastq_prenatal_forebrain}"
+OUTDIR="${1:-raw}"
 JOBS="${JOBS:-2}"
 PROTO="${PROTO:-https}"
 LIMIT_RATE="${LIMIT_RATE:-}"

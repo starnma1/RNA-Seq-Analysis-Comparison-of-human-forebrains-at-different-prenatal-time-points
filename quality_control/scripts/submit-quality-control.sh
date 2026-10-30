@@ -5,7 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."                      # the quality_control folder
 mkdir -p logs fastqc multiqc
 
-N=$(ls ../fastq_prenatal_forebrain/fastq/*.fastq.gz | wc -l)
+N=$(ls ../raw/fastq/*.fastq.gz | wc -l)
 echo "Submitting FastQC for $N files"
 
 jid=$(sbatch --parsable --array=0-$((N-1))%20 ./scripts/slurm-quality-control.sh)

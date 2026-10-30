@@ -10,7 +10,7 @@ set -euo pipefail
 # --- paths (job is submitted from the alignment folder) ----------------
 cd "$SLURM_SUBMIT_DIR"
 GENOME_DIR=../index/star-index
-FASTQ_DIR=../fastq_prenatal_forebrain/fastq
+FASTQ_DIR=../raw/fastq
 OUT_DIR=./mapping
 
 # --- environment -------------------------------------------------------
