@@ -1,0 +1,15 @@
+name: sys-genomics-align
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10
+  - cutadapt
+  - star
+  - kallisto
+  - samtools
+  - rsem
+  - fastqc
+  - sra-tools
+  - fastp
+  - multiqc
