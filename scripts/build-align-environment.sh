@@ -1,4 +1,4 @@
-# Run from the root of the repo, as `source ./scripts/build-align-environment.sh`
+# Run from the root of the repo, as `bash ./scripts/build-align-environment.sh`
 
 export MAMBA_ROOT_PREFIX=$PWD/micromamba
 export MAMBA_NO_RC=true
