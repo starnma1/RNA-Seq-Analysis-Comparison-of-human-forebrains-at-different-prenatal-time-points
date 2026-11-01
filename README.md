@@ -19,6 +19,6 @@
 ### Environment setup
 #### Normal build from lock
 1. To load the environment with all of the packages we need, from the root of the repo, run `bash ./scripts/sync-align-environment.sh`
-1. Then run `bash ./scripts/activate-align-environment.sh`
+1. Then copy and paste the contents of `./scripts/activate-align-environment.sh` into your terminal.
 #### From scratch (de novo)
 1. If you want to build the environment *from scratch*, from the root of the repo, run `bash ./scripts/build-align-environment.sh`
