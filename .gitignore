@@ -23,3 +23,7 @@ quality_control/multiqc/fastq_qc_report_data/*
 alignment/logs/
 alignment/mapping/*/*
 !alignment/mapping/*/Log.final.out
+
+# Compressed output files
+*.tar.zst.partial
+*.tar.zst
