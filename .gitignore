@@ -6,6 +6,7 @@ micromamba/
 # Reference genome
 *.fa.gz
 *.fa
+*.gtf
 
 # STAR index files
 star-index/
