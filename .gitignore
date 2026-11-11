@@ -28,3 +28,4 @@ alignment/mapping/*/*
 # Compressed output files
 *.tar.zst.partial
 *.tar.zst
+.Rproj.user

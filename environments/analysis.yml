@@ -1,0 +1,38 @@
+name: forebrain-rnaseq
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  # R itself
+  - r-base
+  - r-essentials
+
+  # Counting (featureCounts) and GTF handling
+  - bioconductor-rsubread
+  - bioconductor-rtracklayer
+
+  # Differential expression
+  - bioconductor-deseq2
+  - bioconductor-apeglm            # log fold change shrinkage (lfcShrink)
+  - bioconductor-limma
+  - bioconductor-edger
+
+  # Gene set enrichment
+  - bioconductor-fgsea
+  - r-msigdbr                      # MSigDB / GO gene sets
+  - bioconductor-clusterprofiler
+  - bioconductor-enrichplot
+  - bioconductor-org.hs.eg.db      # human gene ID mapping
+
+  # Exploratory analysis and plotting
+  - bioconductor-degreport         # clustering genes by expression trajectory
+  - bioconductor-complexheatmap
+  - r-pheatmap
+  - r-ggplot2
+  - r-ggrepel
+  - r-rcolorbrewer
+  - r-tidyverse
+  - r-matrixstats
+  - r-knitr
+  - r-kableExtra
+  - r-here
