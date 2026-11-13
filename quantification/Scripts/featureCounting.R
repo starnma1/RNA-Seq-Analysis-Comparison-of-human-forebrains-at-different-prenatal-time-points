@@ -6,15 +6,20 @@ library(Rsubread)
 library(rtracklayer)
 
 bam_dir  <- "alignment/mapping"
-gtf_file <- "reference/Homo_sapiens.GRCh38.116.gtf"   # same GTF used for the STAR index
+gtf_file <- "index/reference_genome/gencode.v50.basic.annotation.gtf"
 out_dir  <- "counts"
 threads  <- as.integer(Sys.getenv("SLURM_CPUS_PER_TASK", "8"))
 
 dir.create(out_dir, showWarnings = FALSE)
 
-# 1. Find the BAMs (STAR names them <sample>_Aligned.sortedByCoord.out.bam)
+# 1. Find the BAMs and derive sample names from their paths
 bams <- list.files(bam_dir, pattern = "\\.bam$", recursive = TRUE, full.names = TRUE)
-sample_names <- sub("_?Aligned\\.sortedByCoord\\.out\\.bam$|\\.bam$", "", basename(bams))
+if (!file.exists(gtf_file)) stop("GTF file not found: ", gtf_file)
+if (!length(bams)) stop("No BAM files found in: ", bam_dir)
+sample_names <- sub("_Aligned\\.sortedByCoord\\.out\\.bam$|\\.bam$", "", basename(bams))
+star_bams <- basename(bams) == "Aligned.sortedByCoord.out.bam"
+sample_names[star_bams] <- basename(dirname(bams[star_bams]))
+if (anyDuplicated(sample_names)) stop("BAM files have duplicate sample names")
 
 # 2. Count: exons are grouped by gene_id, so each row is one gene
 feature_count <- function(bam_files, annotation, multiple_reads) {
@@ -39,7 +44,7 @@ results <- list(
 # Gene names and biotypes from the GTF (read once, used for both)
 gtf   <- import(gtf_file)
 genes <- as.data.frame(unique(mcols(gtf)[gtf$type == "gene",
-                                         c("gene_id", "gene_name", "gene_biotype")]))
+                                         c("gene_id", "gene_name", "gene_type")]))
 
 # 3-5. For each counting mode: build the matrix, annotate, save
 for (mode in names(results)) {
@@ -56,7 +61,7 @@ for (mode in names(results)) {
   g <- genes[match(rownames(counts), genes$gene_id), ]
   annotated <- data.frame(gene_id      = rownames(counts),
                           gene_name    = g$gene_name,
-                          gene_biotype = g$gene_biotype,
+                          gene_biotype = g$gene_type,
                           gene_length  = fc$annotation$Length,
                           counts,
                           check.names  = FALSE)
