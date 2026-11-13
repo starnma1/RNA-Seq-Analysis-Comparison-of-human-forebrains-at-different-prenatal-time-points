@@ -13,9 +13,11 @@ dependencies:
 
   # Differential expression
   - bioconductor-deseq2
-  - bioconductor-apeglm            # log fold change shrinkage (lfcShrink)
+  - bioconductor-apeglm            
   - bioconductor-limma
-  - bioconductor-edger
+  - bioconductor-edgeR
+  - r-tidyverse
+  - r-splines
 
   # Gene set enrichment
   - bioconductor-fgsea
