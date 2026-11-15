@@ -29,3 +29,6 @@ alignment/mapping/*/*
 *.tar.zst.partial
 *.tar.zst
 .Rproj.user
+
+# Personal files
+.Rhistory
