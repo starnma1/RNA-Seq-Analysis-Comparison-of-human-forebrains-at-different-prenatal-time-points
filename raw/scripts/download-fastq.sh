@@ -66,7 +66,7 @@ CURL_OPTS=(-fL --silent --show-error --retry 8 --retry-connrefused
 # -----------------------------------------------------------------------------
 # Sample sheet (from the E-MTAB-6814 SDRF).
 # wpc = "developmental stage" characteristic. Two samples are named "20w" but
-# annotated 19 wpc (5668sTS, 5770sTS); the annotation is used here.
+# annotated 19 wpc (5668sTS, 5770sTS). We manually correct it here.
 # -----------------------------------------------------------------------------
 SAMPLE_SHEET="${OUTDIR}/samples.tsv"
 cat > "$SAMPLE_SHEET" <<'EOF'
@@ -101,8 +101,8 @@ ERR2598137	5667sTS.Human.Forebrain.18w.Male	SAMEA4690059	18	male
 ERR2598148	5768sTS.Human.Brain.19w.Male	SAMEA4690070	19	male
 ERR2598149	5782sTS.Human.Brain.19w.Female	SAMEA4690071	19	female
 ERR2598150	5960sTS.Human.Brain.19w.Male	SAMEA4690072	19	male
-ERR2598151	5668sTS.Human.Brain.20w.Male	SAMEA4690073	19	male
-ERR2598152	5770sTS.Human.Brain.20w.Female	SAMEA4690074	19	female
+ERR2598151	5668sTS.Human.Brain.20w.Male	SAMEA4690073	20	male
+ERR2598152	5770sTS.Human.Brain.20w.Female	SAMEA4690074	20	female
 EOF
 
 N_RUNS=$(( $(wc -l < "$SAMPLE_SHEET") - 1 ))
