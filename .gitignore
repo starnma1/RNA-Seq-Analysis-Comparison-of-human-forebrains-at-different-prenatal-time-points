@@ -32,3 +32,4 @@ alignment/mapping/*/*
 
 # Personal files
 .Rhistory
+.RData

@@ -67,7 +67,7 @@ counts <- counts[keep, ]
 # ---- Save ------------------------------------------------------------------------
 write.csv(counts, file.path(data_dir, "processed_count_matrix.csv"))
 
-agenes %>%
+genes %>%
   filter(gene_id %in% rownames(counts)) %>%
   write_tsv(file.path(data_dir, "gene_annotation.tsv"))
 

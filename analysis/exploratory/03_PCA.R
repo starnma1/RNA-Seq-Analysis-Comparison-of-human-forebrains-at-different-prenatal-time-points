@@ -56,7 +56,7 @@ var_explained <- round(100 * summary(pca)$importance[2, 1:2], 1)
 # PCA scores + metadata, with 5 age groups
 df <- data.frame(pca$x[, 1:2], wpc = samples$wpc, sex = samples$sex) %>%
   mutate(age_group = cut(wpc, breaks = c(0, 5, 8, 11, 13, Inf),
-                         labels = c("4–5 wpc", "7–8 wpc", "9–11 wpc", "12–13 wpc", "16–19 wpc")))
+                         labels = c("4–5 wpc", "7–8 wpc", "9–11 wpc", "12–13 wpc", "16–20 wpc")))
 
 # Mean PC1/PC2 per age group
 group_means <- df %>%
