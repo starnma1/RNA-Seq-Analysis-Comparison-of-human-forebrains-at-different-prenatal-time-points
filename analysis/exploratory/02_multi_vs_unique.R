@@ -25,6 +25,7 @@ library(grid)
 data_dir  <- here("quantification", "Output")
 out_dir  <- here("analysis", "data")
 table_dir <- here("Results-presentation", "Tables")
+qc_dir <- here("Results-presentation", "Figures", "quality-control")
 
 # ---- Read the featureCounts summary (rows = read categories, columns = samples) ----
 fc_unique <- read_tsv(file.path(data_dir, "featurecounts_summary_unique.tsv"))
@@ -54,4 +55,26 @@ tbl <- tableGrob(
 ggsave(file.path(table_dir, "read_fate_unique.png"), tbl,
        width  = convertWidth(sum(tbl$widths), "in", valueOnly = TRUE) + 0.4,
        height = convertHeight(sum(tbl$heights), "in", valueOnly = TRUE) + 0.4,
+       dpi = 300, bg = "white")
+
+# ---- Save as an image of Mapping output --------------------------------------
+
+plt <- fc_unique %>%
+  filter(Status %in% c("Assigned", "Unassigned_MultiMapping",
+                       "Unassigned_NoFeatures", "Unassigned_Ambiguity")) %>%
+  pivot_longer(-Status, names_to = "sample", values_to = "reads") %>%
+  mutate(sample = sub("_.*?\\.Human\\.", " ", sample),
+         Status = sub("Unassigned_", "", Status),
+         Status = factor(Status, levels = c("Assigned", "MultiMapping",
+                                            "NoFeatures", "Ambiguity"))) %>%
+  ggplot(aes(x = reads, y = sample, fill = Status)) +
+  geom_col(position = position_fill(reverse = TRUE)) +
+  scale_x_continuous(labels = scales::percent) +
+  labs(x = "Share of reads", y = NULL, fill = NULL,
+       title = "featureCounts read assignment per sample") +
+  theme_minimal()
+  
+
+
+ggsave(file.path(qc_dir, "qc_featureCounts.png"), plt,
        dpi = 300, bg = "white")
