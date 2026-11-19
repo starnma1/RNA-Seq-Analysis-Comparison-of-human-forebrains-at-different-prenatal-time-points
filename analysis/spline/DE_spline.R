@@ -88,10 +88,27 @@ fit <- glmQLFit(y, design, robust = TRUE)
 
 # Quality checks
 pdf(file.path(result_dir, "qc_plots.pdf"), width = 7, height = 6)
-plotMDS(y, pch = 16, col = hcl.colors(nlevels(factor(meta$wpc)), "Dark 3")[factor(meta$wpc)],
-        main = "MDS (TMM-normalised logCPM)")
+
+pal <- hcl.colors(100, "Viridis", rev = TRUE)
+wpc_idx <- round((meta$wpc - min(meta$wpc)) / diff(range(meta$wpc)) * 99) + 1
+
+mds <- plotMDS(
+  y,
+  pch = 16,
+  cex = 1.4,
+  col = pal[wpc_idx],
+  main = "MDS (TMM-normalised logCPM)"
+)
+
+leg_weeks <- c(4, 8, 12, 16, 20)
+leg_idx   <- round((leg_weeks - min(meta$wpc)) / diff(range(meta$wpc)) * 99) + 1
+legend("topright", legend = paste(leg_weeks, "wpc"),
+       pch = 16, pt.cex = 1.3, col = pal[leg_idx], bty = "n", title = "Age")
+
 plotBCV(y, main = "Biological coefficient of variation")
 plotQLDisp(fit, main = "QL dispersion")
+
+dev.off()   # <-- Closes and finalizes qc_plots.pdf
 
 
 # 5. Test: does expression change with age (any shape)? ----
