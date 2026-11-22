@@ -32,9 +32,6 @@ fit_file   <- here("Results-presentation", "analysis-output", "spline_fit.rds")
 result_dir <- here("Results-presentation", "analysis-output")
 figure_dir <- here("Results-presentation", "Figures")
 
-dir.create(result_dir, recursive = TRUE, showWarnings = FALSE)
-dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
-
 # Load data needed ----
 sp <- readRDS(fit_file)
 

@@ -25,7 +25,7 @@ library(here)
 
 # Settings ----
 # Start from a later step to skip what is already up to date, e.g.
-# run_from <- 8 reruns only the trajectory clustering and the enrichment.
+# run_from <- 8 reruns only the trajectory clustering and both enrichments.
 run_from <- 1
 
 steps <- c(
@@ -37,7 +37,8 @@ steps <- c(
   "exploratory/05_heatmap.R",           #  6. top 50 variable genes
   "spline/DE_spline.R",                 #  7. spline DE fit (slowest step)
   "spline/DE_spline_interpretation.R",  #  8. trajectory clusters + figures
-  "GSEA/2_cluster_gsea.R"               #  9. GO enrichment by direction
+  "GSEA/2_cluster_gsea.R",              #  9. GO enrichment by direction
+  "GSEA/6_gene_set_analysis.R"          # 10. MSigDB enrichment per trajectory cluster
 )
 
 # Run ----

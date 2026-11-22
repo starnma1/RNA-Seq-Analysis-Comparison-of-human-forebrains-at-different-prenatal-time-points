@@ -15,7 +15,8 @@
 #   3. Choose k: elbow plot + preview of cluster shapes for several k.
 #   4. Final k-means clustering (z-scored trajectories), clusters ordered
 #      by peak age (early -> late).
-#   5. Figures: trajectory clusters, top 9 genes with fitted curves.
+#   5. Figures: trajectory clusters; the genes with the largest increase
+#      and decrease with age, with their fitted curves.
 #
 # Inputs
 #   Results-presentation/analysis-output/spline_fit.rds   saved by DE_spline.R
@@ -42,9 +43,17 @@ k_try      <- 4:8    # k values shown in the cluster preview
 n_grid     <- 100    # number of ages on the prediction grid
 seed       <- 1
 
+# Top-genes plot
+n_top        <- 3    # genes shown per direction (increasing / decreasing)
+trend_cutoff <- 0.8  # |Spearman rho| of the fitted curve with age to count as
+                     # consistently increasing or decreasing
+min_logcpm   <- 2    # minimum average expression (log2 CPM), so tiny genes
+                     # with huge fold changes don't dominate
+
 result_dir <- here("Results-presentation", "analysis-output")
 figure_dir <- here("Results-presentation", "Figures")
 fit_file   <- file.path(result_dir, "spline_fit.rds")
+anno_file  <- here("analysis", "data", "gene_annotation.tsv")
 
 dir.create(result_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
@@ -53,6 +62,9 @@ dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 # 1. Load the saved fit ----
 sp <- readRDS(fit_file)
+
+# Gene names, for the top-genes plot
+gene_anno <- read_tsv(anno_file, show_col_types = FALSE)   # gene_id, gene_name, ...
 
 fit          <- sp$fit
 y            <- sp$y
@@ -225,23 +237,69 @@ print(p_clusters)
 ggsave(file.path(figure_dir, "spline_trajectory_clusters.png"), p_clusters,
        width = 10, height = 6.5, dpi = 300, bg = "white")
 
-# 5b. Top 9 genes: observed logCPM with fitted trajectory
-top9 <- head(tt$gene_id, 9)
+# 5b. Genes with the largest increase and decrease with age
+# Ranked by the size of the fitted change (log2 CPM, oldest minus youngest
+# age), not by p-value: the smallest p-values can come from genes that are
+# high in only a few samples. Only genes whose fitted curve moves consistently
+# in one direction (|Spearman rho| >= trend_cutoff) and that are reasonably
+# expressed (logCPM >= min_logcpm) are considered.
+#
+# Where a gene has zero counts, its fitted curve keeps falling far below the
+# lowest observed values (the model's mean tends to 0), which inflates fold
+# changes. Adding the same small offset that cpm(prior.count = 2) adds to the
+# dots keeps both the curves and the fold changes on the scale of the data.
+prior_cpm   <- 2 / mean(y$samples$lib.size * y$samples$norm.factors) * 1e6
+grid_capped <- log2(2^grid_logcpm + prior_cpm)
+
+trend  <- apply(grid_capped[sig_genes, , drop = FALSE], 1,
+                function(g) cor(g, wpc_grid, method = "spearman"))
+change <- grid_capped[sig_genes, n_grid] - grid_capped[sig_genes, 1]
+
+candidates <- tibble(gene_id = sig_genes, trend = trend, change = change) %>%
+  left_join(dplyr::select(tt, gene_id, logCPM), by = "gene_id") %>%
+  filter(logCPM >= min_logcpm)
+
+top_up <- candidates %>%
+  filter(trend >= trend_cutoff) %>%
+  slice_max(change, n = n_top, with_ties = FALSE) %>%
+  pull(gene_id)
+
+top_down <- candidates %>%
+  filter(trend <= -trend_cutoff) %>%
+  slice_min(change, n = n_top, with_ties = FALSE) %>%
+  pull(gene_id)
+
+top_genes <- c(top_up, top_down)
+
+# Panel titles: gene name (falls back to the ID), direction, fitted change
+gene_names <- gene_anno$gene_name[match(top_genes, gene_anno$gene_id)]
+gene_names <- ifelse(is.na(gene_names), top_genes, gene_names)
+directions <- rep(c("increasing", "decreasing"), c(length(top_up), length(top_down)))
+
+panel_labels <- sprintf("%s\n%s, %+.1f log2", gene_names, directions, change[top_genes])
+names(panel_labels) <- top_genes
+
 obs_logcpm <- cpm(y, log = TRUE, prior.count = 2)
 
-obs_long <- as_tibble(obs_logcpm[top9, ], rownames = "gene_id") %>%
+obs_long <- as_tibble(obs_logcpm[top_genes, , drop = FALSE], rownames = "gene_id") %>%
   pivot_longer(-gene_id, names_to = "sample_name", values_to = "logCPM") %>%
-  left_join(select(meta, sample_name, wpc, sex), by = "sample_name")
+  left_join(dplyr::select(meta, sample_name, wpc, sex), by = "sample_name") %>%
+  mutate(panel = unname(panel_labels[gene_id]))
 
-fit_long <- as_tibble(grid_logcpm[top9, ], rownames = "gene_id") %>%
+fit_long <- as_tibble(grid_capped[top_genes, , drop = FALSE], rownames = "gene_id") %>%
   pivot_longer(-gene_id, names_to = "wpc", values_to = "logCPM") %>%
-  mutate(wpc = as.numeric(wpc))
+  mutate(wpc   = as.numeric(wpc),
+         panel = unname(panel_labels[gene_id]))
 
+# One row per direction: increasing on top, decreasing below
 p_top <- ggplot(obs_long, aes(wpc, logCPM)) +
   geom_point(aes(shape = sex), colour = "grey30", size = 2, alpha = 0.8) +
   geom_line(data = fit_long, colour = "#2166AC", linewidth = 1) +
-  facet_wrap(~ factor(gene_id, levels = top9), scales = "free_y") +
-  labs(title = "Top age-varying genes",
+  facet_wrap(~ factor(panel, levels = panel_labels), ncol = n_top, scales = "free_y") +
+  labs(title = "Genes with the largest increase and decrease with age",
+       subtitle = paste0("Age-varying genes (FDR < ", fdr_cutoff, ") with |Spearman rho| >= ",
+                         trend_cutoff, " and mean log2 CPM >= ", min_logcpm,
+                         ", ranked by fitted change"),
        x = "Age (wpc)", y = "log2 CPM") +
   theme_minimal(base_size = 11) +
   theme(panel.grid.minor = element_blank(),
@@ -249,7 +307,7 @@ p_top <- ggplot(obs_long, aes(wpc, logCPM)) +
 print(p_top)
 
 ggsave(file.path(figure_dir, "spline_top_genes.png"), p_top,
-       width = 10, height = 8, dpi = 300, bg = "white")
+       width = 10, height = 6.5, dpi = 300, bg = "white")
 
 
 message("Done. Results in ", result_dir, "; figures in ", figure_dir)

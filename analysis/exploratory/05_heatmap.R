@@ -11,8 +11,9 @@
 #   sample_metadata.tsv          run, sample_name, sex, wpc, ... (from 01_samples.R)
 #
 # Output
-#   Heatmap in the plot pane (not saved); prints the gene names in the
-#   order the clustering puts them.
+#   Results-presentation/Figures/heatmap_top50_variable_genes.png
+#   (also shown in the plot pane); prints the gene names in the order the
+#   clustering puts them.
 #
 # Run from the RStudio project (paths are built with here()).
 # =============================================================================
@@ -21,8 +22,12 @@ library(edgeR)
 library(pheatmap)
 library(here)
 
+# Settings ----
+data_dir   <- here("analysis", "data")
+figure_dir <- here("Results-presentation", "Figures")
+dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
+
 # Load data ----
-data_dir <- here("analysis", "data")
 
 counts   <- as.matrix(read.csv(file.path(data_dir, "processed_count_matrix.csv"),
                                row.names = 1, check.names = FALSE))
@@ -68,6 +73,13 @@ hm <- pheatmap(
   labels_row = labels,
   show_colnames = FALSE
 )
+
+# Save the heatmap (pheatmap has already drawn it in the plot pane)
+png(file.path(figure_dir, "heatmap_top50_variable_genes.png"),
+    width = 10, height = 10, units = "in", res = 300)
+grid::grid.newpage()
+grid::grid.draw(hm$gtable)
+dev.off()
 
 ordered_gene_ids <- rownames(heatmap_data)[hm$tree_row$order]
 genes[match(ordered_gene_ids, genes$gene_id), ]$gene_name
