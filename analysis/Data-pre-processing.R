@@ -2,8 +2,9 @@
 # =============================================================================
 # Data-pre-processing.R
 #
-# Prepares the gene count matrix for all downstream analyses (exploratory,
-# DESeq2, GSEA).
+# Prepares the gene count matrix used by ALL downstream analyses
+# (PCA, heatmap, spline DE, trajectory clustering, GO enrichment), so every
+# analysis works on the same set of protein-coding genes.
 #
 # Steps
 #   1. Read the unique-read featureCounts matrix.
@@ -19,10 +20,17 @@
 #   analysis/data/sample_metadata.tsv
 #
 # Outputs (analysis/data/)
-#   counts_protein_coding_filtered.csv   genes x samples, raw integer counts (DESeq2 input)
+#   processed_count_matrix.csv           genes x samples, raw integer counts;
+#                                        columns are run IDs (ERR...) in
+#                                        sample_metadata.tsv order
 #   gene_annotation.tsv                  gene_id, gene_name, gene_biotype, gene_length
 #                                        for the genes kept
 #   preprocessing_gene_numbers.tsv       how many genes remain after each step
+#
+# Notes
+#   The sex check (04_sex_check.R) deliberately does NOT use this matrix:
+#   XIST is a non-coding gene and is removed here.
+#   Run from the RStudio project (paths are built with here()).
 # =============================================================================
 
 library(here)
@@ -52,17 +60,21 @@ counts <- counts[, metadata$run]                       # same order as metadata 
 # featureCounts gives whole numbers; store them as integers for DESeq2
 storage.mode(counts) <- "integer"
 
+n_all <- nrow(counts)
+
 # ---- 2. Keep protein-coding genes ----------------------------------------------
 pc_ids <- genes %>%
   filter(gene_biotype == "protein_coding") %>%
   pull(gene_id)
 
 counts <- counts[rownames(counts) %in% pc_ids, ]
+n_protein_coding <- nrow(counts)
 
 
 # ---- 3. Remove low-count genes ---------------------------------------------------
 keep   <- rowSums(counts >= min_count) >= min_samples
 counts <- counts[keep, ]
+n_expressed <- nrow(counts)
 
 # ---- Save ------------------------------------------------------------------------
 write.csv(counts, file.path(data_dir, "processed_count_matrix.csv"))
@@ -71,3 +83,11 @@ genes %>%
   filter(gene_id %in% rownames(counts)) %>%
   write_tsv(file.path(data_dir, "gene_annotation.tsv"))
 
+tibble(
+  step    = c("All genes (featureCounts, GENCODE v50 basic)",
+              "Protein-coding",
+              paste0("Protein-coding, >= ", min_count, " reads in >= ",
+                     min_samples, " samples")),
+  n_genes = c(n_all, n_protein_coding, n_expressed)
+) %>%
+  write_tsv(file.path(data_dir, "preprocessing_gene_numbers.tsv"))

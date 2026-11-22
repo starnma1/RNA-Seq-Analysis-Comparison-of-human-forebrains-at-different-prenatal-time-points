@@ -8,25 +8,25 @@
 # flat. Age-varying genes are then clustered by the shape of their trajectory.
 #
 # Steps
-#   1. Load raw counts + sample metadata; match columns to metadata rows.
-#   2. Sanity checks (sample order, wpc in sample names, tissue vs age).
+#   1. Load the protein-coding count matrix + sample metadata; match
+#      columns to metadata rows.
+#   2. Check every sample is present and put columns in metadata order.
 #   3. Design: intercept + ns(wpc, df = 3)
 #   4. edgeR: filterByExpr -> TMM -> estimateDisp -> glmQLFit (robust).
 #   5. Joint QL F-test on the spline coefficients = "changes with age".
-#   6. Predict each gene's trajectory on a fine wpc grid; cluster the
-#      significant genes (k-means on z-scored trajectories).
-#   7. Save tables and figures.
+#   6. Save the fit (for DE_spline_interpretation.R) and the results table.
 #
 # Inputs
-#   quantification/Output/gene_counts_matrix_unique.csv   genes x samples, raw counts
-#   analysis/data/sample_metadata.tsv                    sample_name, wpc, sex, ...
+#   analysis/data/processed_count_matrix.csv   protein-coding genes x samples, raw
+#                                              counts (from Data-pre-processing.R)
+#   analysis/data/sample_metadata.tsv          run, sample_name, wpc, sex, ...
 #
-# Outputs
-#   analysis/results/spline_DE/spline_DE_all_genes.csv
-#   analysis/results/spline_DE/spline_DE_clusters.csv
-#   analysis/results/spline_DE/qc_plots.pdf
-#   Results-presentation/Figures/spline_trajectory_clusters.png
-#   Results-presentation/Figures/spline_top_genes.png
+# Outputs (Results-presentation/analysis-output/)
+#   spline_fit.rds             fitted model + everything the later scripts need
+#   spline_DE_all_genes.csv    spline test result for every tested gene
+#   qc_plots.pdf               MDS, BCV and QL dispersion plots
+#
+# Clustering and figures are done in DE_spline_interpretation.R.
 #
 # Run from the RStudio project (paths are built with here()).
 # =============================================================================
@@ -43,7 +43,7 @@ adjust_sex <- FALSE   # include sex as a covariate
 fdr_cutoff <- 0.05
 n_clusters <- 6      # check the elbow plot in qc_plots.pdf and adjust
 
-count_file <- here("quantification", "Output", "gene_counts_matrix_unique.csv")
+count_file <- here("analysis", "data", "processed_count_matrix.csv")   # protein-coding only
 meta_file  <- here("analysis", "data", "sample_metadata.tsv")
 result_dir <- here("Results-presentation", "analysis-output")
 figure_dir <- here("Results-presentation", "Figures")
@@ -54,16 +54,18 @@ figure_dir <- here("Results-presentation", "Figures")
 dd   <- read_csv(count_file, show_col_types = FALSE)
 meta <- read_tsv(meta_file, show_col_types = FALSE)
 
-# Genes as row names; drop the "ERR..._" prefix from sample names
+# Genes as row names; columns are run IDs (ERR...)
 counts <- dd %>%
   column_to_rownames(var = names(dd)[1]) %>%
   as.matrix()
-colnames(counts) <- sub("^[^_]*_", "", colnames(counts))
 
 
-# 2. Match samples and sanity checks ----
-(missing <- setdiff(meta$sample_name, colnames(counts)))
-counts <- counts[, meta$sample_name]
+# 2. Match samples ----
+# Put columns in metadata order, then rename them to sample names
+# (DE_spline_interpretation.R joins counts and metadata by sample_name).
+stopifnot(setequal(colnames(counts), meta$run))
+counts <- counts[, meta$run]
+colnames(counts) <- meta$sample_name
 
 # 3. Design matrix ----
 age_basis <- ns(meta$wpc, df = spline_df)
@@ -121,6 +123,8 @@ tt <- topTags(res, n = Inf)$table %>%
 
 
 sig_genes <- tt$gene_id[tt$FDR < fdr_cutoff]
+
+write_csv(tt, file.path(result_dir, "spline_DE_all_genes.csv"))
 
 
 # 6. Save fit for the interpretation script ----

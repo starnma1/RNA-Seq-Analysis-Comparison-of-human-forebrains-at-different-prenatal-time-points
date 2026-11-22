@@ -1,0 +1,4 @@
+step	n_genes
+All genes (featureCounts, GENCODE v50 basic)	78733
+Protein-coding	20107
+Protein-coding, >= 10 reads in >= 3 samples	15543

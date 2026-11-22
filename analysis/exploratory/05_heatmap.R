@@ -1,6 +1,33 @@
+#!/usr/bin/env Rscript
+# =============================================================================
+# 05_heatmap.R
+#
+# Heatmap of the 50 most variable protein-coding genes (TMM-normalised
+# log2 CPM, scaled per gene), with samples ordered by age.
+#
+# Inputs (analysis/data/)
+#   processed_count_matrix.csv   genes x samples, raw counts (from Data-pre-processing.R)
+#   gene_annotation.tsv          gene_id, gene_name, gene_biotype, gene_length
+#   sample_metadata.tsv          run, sample_name, sex, wpc, ... (from 01_samples.R)
+#
+# Output
+#   Heatmap in the plot pane (not saved); prints the gene names in the
+#   order the clustering puts them.
+#
+# Run from the RStudio project (paths are built with here()).
+# =============================================================================
+
 library(edgeR)
 library(pheatmap)
 library(here)
+
+# Load data ----
+data_dir <- here("analysis", "data")
+
+counts   <- as.matrix(read.csv(file.path(data_dir, "processed_count_matrix.csv"),
+                               row.names = 1, check.names = FALSE))
+genes    <- read.delim(file.path(data_dir, "gene_annotation.tsv"))
+metadata <- read.delim(file.path(data_dir, "sample_metadata.tsv"))
 
 # Match metadata to count columns, then order samples by age.
 sample_index <- match(colnames(counts), metadata$run)
