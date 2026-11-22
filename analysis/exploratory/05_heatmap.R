@@ -52,6 +52,7 @@ labels <- gene_names
 
 sample_annotation <- data.frame(
   Weeks = metadata$wpc,
+  Sex = metadata$sex,
   row.names = metadata$run
 )
 
@@ -60,7 +61,7 @@ hm <- pheatmap(
   main = "Top 50 variable protein-coding genes",
   scale = "row",
   clustering_distance_rows = "correlation",
-clustering_method = "ward.D",
+  clustering_method = "ward.D",
   treeheight_row = 0,
   cluster_cols = FALSE,
   annotation_col = sample_annotation,
