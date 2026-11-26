@@ -7,19 +7,11 @@
 
 set -euo pipefail
 
-# --- paths (job is submitted from the alignment folder) ----------------
-cd "$SLURM_SUBMIT_DIR"
-GENOME_DIR=../index/star-index
-FASTQ_DIR=../raw/fastq
-OUT_DIR=./mapping
-
-# --- environment -------------------------------------------------------
-export MAMBA_ROOT_PREFIX="$SLURM_SUBMIT_DIR/../micromamba"
-export MAMBA_NO_RC=true
-export PATH="$HOME/.local/bin:$PATH"
-ENV_NAME=sys-genomics-align           # check with: micromamba env list
-eval "$(micromamba shell hook -s bash)"
-micromamba activate "$ENV_NAME"
+: "${PROJECT_ROOT:?Submit using the preprocessing alignment launcher}"
+: "${PIXI_BIN:?Submit using the preprocessing alignment launcher}"
+GENOME_DIR="$PROJECT_ROOT/index/star-index"
+FASTQ_DIR="$PROJECT_ROOT/raw/fastq"
+OUT_DIR="$PROJECT_ROOT/alignment/mapping"
 
 # --- pick this task's file ---------------------------------------------
 FILES=("$FASTQ_DIR"/*.fastq.gz)       # glob is sorted, so indices are stable
@@ -40,11 +32,12 @@ echo "Task $SLURM_ARRAY_TASK_ID: aligning $sample"
 mkdir -p "$out"
 rm -rf "$out/_STARtmp"                # leftover from a failed attempt
 
-STAR --genomeDir "$GENOME_DIR" \
+"$PROJECT_ROOT/preprocessing/pixi.sh" run --as-is --offline STAR --genomeDir "$GENOME_DIR" \
      --runThreadN "$SLURM_CPUS_PER_TASK" \
      --readFilesIn "$fq" \
      --readFilesCommand zcat \
      --outSAMtype BAM SortedByCoordinate \
      --outFileNamePrefix "$out/"
 
-samtools index -@ "$SLURM_CPUS_PER_TASK" "$out/Aligned.sortedByCoord.out.bam"
+"$PROJECT_ROOT/preprocessing/pixi.sh" run --as-is --offline samtools index \
+    -@ "$SLURM_CPUS_PER_TASK" "$out/Aligned.sortedByCoord.out.bam"

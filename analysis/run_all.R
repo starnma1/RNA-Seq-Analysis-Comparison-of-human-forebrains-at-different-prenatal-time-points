@@ -31,7 +31,7 @@ run_from <- 1
 steps <- c(
   "exploratory/01_samples.R",           #  1. sample metadata + overview
   "exploratory/02_multi_vs_unique.R",   #  2. featureCounts read assignment QC
-  "Data-pre-processing.R",              #  3. protein-coding count matrix
+  "data-pre-processing/Data-pre-processing.R", # 3. protein-coding count matrix
   "exploratory/03_PCA.R",               #  4. PCA
   "exploratory/04_sex_check.R",         #  5. XIST vs RPS4Y1
   "exploratory/05_heatmap.R",           #  6. top 50 variable genes

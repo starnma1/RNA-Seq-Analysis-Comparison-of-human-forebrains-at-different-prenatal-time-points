@@ -7,8 +7,9 @@
 
 set -euo pipefail
 
-# --- paths (job is submitted from the alignment folder) ----------------
-cd "$SLURM_SUBMIT_DIR"
+: "${PROJECT_ROOT:?Submit using the preprocessing packaging launcher}"
+: "${PIXI_BIN:?Submit using the preprocessing packaging launcher}"
+cd "$PROJECT_ROOT/alignment"
 SRC=mapping
 ARCHIVE=mapping.tar.zst
 TMP="$ARCHIVE.partial"
@@ -17,10 +18,10 @@ TMP="$ARCHIVE.partial"
 # --ultra -22 is zstd's highest level; its 128 MB window is still within the
 # default decoder limit, so the archive extracts with a plain `tar --zstd -xf`.
 echo "Packaging $SRC -> $ARCHIVE ($(du -sh "$SRC" | cut -f1))"
-tar --exclude='_STARtmp' \
+"$PROJECT_ROOT/preprocessing/pixi.sh" run --as-is --offline tar --exclude='_STARtmp' \
     -I "zstd --ultra -22 -T$SLURM_CPUS_PER_TASK" \
     -cvf "$TMP" "$SRC"
 
-zstd -t "$TMP"                         # verify integrity before publishing
+"$PROJECT_ROOT/preprocessing/pixi.sh" run --as-is --offline zstd -t "$TMP"
 mv "$TMP" "$ARCHIVE"
 echo "Done: $(du -sh "$ARCHIVE" | cut -f1) $ARCHIVE"

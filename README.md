@@ -53,14 +53,14 @@ flowchart LR
 
 | Step | Runs on | Script(s) | Main output |
 |------------------|------------------|------------------|------------------|
-| 1\. Download reads + metadata | Euler | `raw/scripts/download-fastq.sh` | `raw/fastq/*.fastq.gz`, `raw/samples.tsv`, `raw/ena/` |
-| 2\. Read quality control | Euler (Slurm) | `library_qc/scripts/submit-quality-control.sh` | `library_qc/multiqc/fastq_qc_report.html` |
-| 3\. Reference genome + STAR index | Euler (Slurm) | `index/scripts/download-genome.sh`, `download-gtf.sh`, `slurm-build-index.sh` | `index/star-index/` |
-| 4\. Alignment | Euler (Slurm) | `alignment/scripts/submit-align-fastq.sh` | `alignment/mapping/<sample>/` (BAM + `Log.final.out`) |
-| 5\. Gene counting | Euler (Slurm) | `alignment/scripts/submit-feature-counting.sh` | `quantification/Output/gene_counts_*` |
+| 1\. Download reads + metadata | Euler | `preprocessing/scripts/raw/download-fastq.sh` | `raw/fastq/*.fastq.gz`, `raw/samples.tsv`, `raw/ena/` |
+| 2\. Read quality control | Euler (Slurm) | `preprocessing/scripts/qc/submit-quality-control.sh` | `library_qc/multiqc/fastq_qc_report.html` |
+| 3\. Reference genome + STAR index | Euler (Slurm) | `preprocessing/scripts/reference/` | `index/star-index/` |
+| 4\. Alignment | Euler (Slurm) | `preprocessing/scripts/alignment/submit-align-fastq.sh` | `alignment/mapping/<sample>/` (BAM + `Log.final.out`) |
+| 5\. Gene counting | Euler (Slurm) | `preprocessing/scripts/counting/submit-feature-counting.sh` | `quantification/Output/gene_counts_*` |
 | 6\. Sample metadata | Local R | `analysis/exploratory/01_samples.R` | `analysis/data/sample_metadata.tsv` |
 | 7\. Read assignment QC | Local R | `analysis/exploratory/02_multi_vs_unique.R` | `Results-presentation/Tables/read_fate_unique.png` |
-| 8\. Protein-coding count matrix (used by all analyses) | Local R | `analysis/Data-pre-processing.R` | `analysis/data/processed_count_matrix.csv` |
+| 8\. Protein-coding count matrix (used by all analyses) | Local R | `analysis/data-pre-processing/Data-pre-processing.R` | `analysis/data/processed_count_matrix.csv` |
 | 9\. Exploration (PCA, sex check, heatmap) | Local R | `analysis/exploratory/03_PCA.R`, `04_sex_check.R`, `05_heatmap.R` | `Results-presentation/Figures/pca_age_groups.png` |
 | 10\. Spline differential expression | Local R | `analysis/spline/DE_spline.R` | `Results-presentation/analysis-output/spline_fit.rds` |
 | 11\. Trajectory clustering + figures | Local R | `analysis/spline/DE_spline_interpretation.R` | `spline_DE_clusters.csv`, trajectory figures |
@@ -73,32 +73,36 @@ flowchart LR
 
 ```         
 .
-├── raw/                      Sample sheet, ENA metadata, download script (FASTQs not tracked)
-├── library_qc/               FastQC/MultiQC scripts and the MultiQC report
-├── index/                    Reference download + STAR index scripts (genome/index not tracked)
-├── alignment/
-│   ├── scripts/              Slurm jobs: align, count, check BAMs, package outputs
-│   ├── processing/           featureCounting.R (run by the counting job)
-│   └── mapping/<sample>/     STAR output per sample (only Log.final.out is tracked)
-├── quantification/
-│   ├── Scripts/              Copy of featureCounting.R
-│   └── Output/               Count matrices, featureCounts summaries (not tracked)
+├── preprocessing/
+│   ├── pixi.toml, pixi.lock # Locked HPC tools, including R for counting
+│   ├── pixi.sh              # Project-local Pixi runtime wrapper
+│   └── scripts/             # Slurm install and raw, QC, reference, alignment, counting
+├── raw/                      Sample sheet, ENA metadata (FASTQs not tracked)
+├── library_qc/               FastQC/MultiQC outputs and report
+├── index/                    Reference and STAR index (not tracked)
+├── alignment/mapping/        STAR output per sample (only Log.final.out is tracked)
+├── quantification/Output/    Count matrices, featureCounts summaries (not tracked)
 ├── analysis/
 │   ├── data/                 Sample metadata, filtered counts, gene annotation
 │   ├── exploratory/          01–05: metadata, read assignment, PCA, sex check, heatmap
 │   ├── spline/               Spline DE fit and its interpretation
 │   ├── GSEA/                 GO enrichment by direction and per trajectory cluster
-│   ├── Data-pre-processing.R  Builds the protein-coding matrix every analysis uses
+│   ├── data-pre-processing/  Builds the protein-coding matrix every analysis uses
 │   ├── run_all.R             Runs the whole R analysis in order
-│   └── start_rstudio.sh      Opens the RStudio project with the conda R
 ├── Results-presentation/
 │   ├── Figures/              All figures (quality-control/ holds QC plots + QC_summary.md)
 │   ├── Tables/               Summary tables saved as images
 │   └── analysis-output/      Fitted model, DE and enrichment tables, edgeR QC plots
-├── environments/             Conda/micromamba environment files
-├── scripts/                  Build/sync/activate the alignment environment
-└── PROJECT_PLAN.md           Project plan and timeline
+└── environments/             Separate R analysis environment and legacy alignment lock
 ```
+
+Preprocessing code lives in `preprocessing/`; data and results remain at their
+existing paths so downstream R scripts and existing artifacts do not need to
+move. `raw/` holds the sample sheet, ENA records and downloaded reads;
+`library_qc/` holds QC reports; `index/` holds reference files and the STAR
+index; `alignment/mapping/` holds per-sample alignment outputs; and
+`quantification/Output/` is the handoff to `analysis/`. Large generated files
+are generally not tracked; selected QC reports and STAR summary logs are.
 
 ------------------------------------------------------------------------
 
@@ -106,35 +110,37 @@ flowchart LR
 
 Raw-data processing (steps 1–5) runs on the ETH **Euler** cluster. The R analysis (steps 6–12) runs locally in RStudio.
 
-### Euler: install `micromamba`
+### Euler: Pixi preprocessing environment
 
-1.  Install it: `sh  mkdir -p ~/.local/bin  cd ~/.local/bin  curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba --strip-components=1`
-2.  Configure your shell to load micromamba at login by adding this to `~/.bashrc`: `sh  export PATH=$HOME/.local/bin:$PATH  eval "$(micromamba shell hook -s bash)"`
-3.  Run `bash ~/.bashrc`.
+Install Pixi separately and make it available on the submission shell's PATH
+(or set `PIXI_BIN` to its absolute executable path). Submit the locked
+installation from the repository root:
 
-### Euler: alignment environment (`sys-genomics-align`)
-
-Contains STAR, samtools, FastQC, MultiQC, fastp, cutadapt and related tools (`environments/environment.align.yml`).
-
-- **From the lock file (normal):** from the repository root, run `bash ./scripts/sync-align-environment.sh`, then paste the contents of `./scripts/activate-align-environment.sh` into your terminal.
-- **From scratch:** from the repository root, run `bash ./scripts/build-align-environment.sh`.
-
-> The environment files have moved into `environments/`, but these scripts still look for them in the repository root. See [Known issues](#known-issues-and-to-dos).
-
-### Euler: R for gene counting
-
-The counting job uses R 4.4.1 from the `2025-06` software stack and needs the Bioconductor packages `Rsubread` and `rtracklayer` in an R library the job can see. After configuring a writable personal R library, start R with `module load stack/2025-06` and `module load r/4.4.1`, then install them:
-
-``` r
-install.packages("BiocManager", repos = "https://cloud.r-project.org")
-BiocManager::install(c("Rsubread", "rtracklayer"), ask = FALSE, update = FALSE)
+``` sh
+bash preprocessing/scripts/submit-install.sh
 ```
+
+Check the job with `squeue` or `sacct` and its log in
+`preprocessing/logs/pixi-install-<jobid>.log`; wait for successful completion
+before submitting preprocessing. The job requests eight CPUs on one node:
+Pixi parallelizes package downloads and extraction, not installation across
+multiple nodes. It needs network access and a shared project filesystem.
+Avoid running multiple installs simultaneously. The environment is installed
+to `preprocessing/.pixi/`, and Pixi caches, temporary files, home and R user
+library are kept in `preprocessing/.runtime/`. The batch jobs use the prepared
+environment offline with `--as-is`; they do not solve or install dependencies.
+The installer checks the main tools and R packages before marking the
+environment ready. Repeat the install job after changing the manifest or lock
+file, or recreating the environment.
+`environments/environment.align.yml` and its explicit lock are retained only
+as a reference for the former micromamba environment.
 
 ### Local: R analysis environment (`forebrain-rnaseq`)
 
 ``` sh
 conda env create -f environments/analysis.yml
-./analysis/start_rstudio.sh        # opens the .Rproj with R from this environment
+conda activate forebrain-rnaseq
+Rscript analysis/run_all.R
 ```
 
 The analysis scripts build all paths with `here()`, so they must be run from the RStudio project (`*.Rproj` in the repository root). Main packages: edgeR, DESeq2, splines, tidyverse, clusterProfiler, enrichplot, org.Hs.eg.db, pheatmap, gridExtra.
@@ -146,8 +152,7 @@ The analysis scripts build all paths with `here()`, so they must be run from the
 ### 1. Download reads (Euler)
 
 ``` sh
-cd raw
-bash ./scripts/download-fastq.sh
+bash preprocessing/scripts/raw/download-fastq.sh
 ```
 
 Writes `samples.tsv`, the ENA metadata in `ena/`, and FASTQs in `fastq/`. The script throttles parallel downloads, resumes partial files, verifies every file against its ENA MD5 checksum, and can be re-run safely. Options are set with environment variables (`JOBS`, `PROTO`, `LIMIT_RATE`, `DRY_RUN=1`, `SKIP_MD5=1`).
@@ -155,7 +160,7 @@ Writes `samples.tsv`, the ENA metadata in `ena/`, and FASTQs in `fastq/`. The sc
 ### 2. Read quality control (Euler)
 
 ``` sh
-bash library_qc/scripts/submit-quality-control.sh
+bash preprocessing/scripts/qc/submit-quality-control.sh
 ```
 
 Runs FastQC as a Slurm array (one task per FASTQ), then MultiQC once all tasks finish. Report: `library_qc/multiqc/fastq_qc_report.html`. Interpretation: `Results-presentation/Figures/quality-control/QC_summary.md`.
@@ -163,32 +168,29 @@ Runs FastQC as a Slurm array (one task per FASTQ), then MultiQC once all tasks f
 ### 3. Reference and STAR index (Euler)
 
 ``` sh
-cd index/reference_genome
-source ../scripts/download-genome.sh     # hg38 FASTA (UCSC)
-source ../scripts/download-gtf.sh        # GENCODE v50 basic annotation
-cd ..
-sbatch scripts/slurm-build-index.sh      # writes index/star-index/
+bash preprocessing/scripts/reference/download-genome.sh
+bash preprocessing/scripts/reference/download-gtf.sh
+bash preprocessing/scripts/reference/submit-build-index.sh
 ```
 
 ### 4. Alignment (Euler)
 
 ``` sh
-cd alignment
-bash scripts/submit-align-fastq.sh       # Slurm array, 5 samples at a time
-bash scripts/quick-check-bams.sh         # samtools quickcheck on all BAMs
+bash preprocessing/scripts/alignment/submit-align-fastq.sh
+bash preprocessing/scripts/alignment/quick-check-bams.sh
 ```
 
-Each sample gets `alignment/mapping/<run>_<sample_name>/` containing a sorted, indexed BAM and STAR's `Log.final.out`. To archive the mapping folder afterwards: `bash scripts/submit-package-outputs.sh` (zstd-compressed tarball).
+Each sample gets `alignment/mapping/<run>_<sample_name>/` containing a sorted, indexed BAM and STAR's `Log.final.out`. To archive the mapping folder afterwards: `bash preprocessing/scripts/alignment/submit-package-outputs.sh` (zstd-compressed tarball).
 
 ### 5. Gene counting (Euler)
 
 From the repository root:
 
 ``` sh
-bash alignment/scripts/submit-feature-counting.sh
+bash preprocessing/scripts/counting/submit-feature-counting.sh
 ```
 
-Runs `alignment/processing/featureCounting.R`. It writes count matrices to `counts/` twice: once with uniquely mapped reads only and once including multimapping reads. These files were then moved to `quantification/Output/`, which is where the analysis scripts read them. Logs go to `alignment/logs/`.
+Runs `preprocessing/scripts/counting/featureCounting.R`. It writes count matrices directly to `quantification/Output/`: once with uniquely mapped reads only and once including multimapping reads. Logs go to `alignment/logs/`.
 
 ### 6–12. Analysis (local, RStudio)
 
@@ -206,7 +208,7 @@ The scripts, in the order `run_all.R` runs them:
 |------------------|------------------|------------------|------------------|
 | 1 | `analysis/exploratory/01_samples.R` | `raw/samples.tsv`, `raw/ena/read_run.tsv` | `sample_metadata.tsv`, `sample_summary.tsv`, `sample_overview.png` |
 | 2 | `analysis/exploratory/02_multi_vs_unique.R` | featureCounts summary | `read_fate_unique.png`, `qc_featureCounts.png` |
-| 3 | `analysis/Data-pre-processing.R` | unique count matrix, annotation, metadata | `processed_count_matrix.csv`, `gene_annotation.tsv`, `preprocessing_gene_numbers.tsv` |
+| 3 | `analysis/data-pre-processing/Data-pre-processing.R` | unique count matrix, annotation, metadata | `processed_count_matrix.csv`, `gene_annotation.tsv`, `preprocessing_gene_numbers.tsv` |
 | 4 | `analysis/exploratory/03_PCA.R` | output of step 3 | `pca_age_groups.png` |
 | 5 | `analysis/exploratory/04_sex_check.R` | full annotated count table (XIST is non-coding) | XIST vs RPS4Y1 plot |
 | 6 | `analysis/exploratory/05_heatmap.R` | output of step 3 | `heatmap_top50_variable_genes.png` |
@@ -293,15 +295,7 @@ Found while writing this README. Apart from the first item, none of them affect 
 
 **Euler scripts**
 
-- [ ] `scripts/build-align-environment.sh` and `sync-align-environment.sh` look for `environment.align.yml` / `environment.align.lock.txt` in the repository root; they are now in `environments/`.
-
-- [ ] The QC folder was renamed from `quality_control/` to `library_qc/`, but the usage comment in `submit-quality-control.sh` and the `.gitignore` rules still use the old name, so FastQC outputs in `library_qc/` are no longer ignored by git.
-
-- [ ] `featureCounting.R` writes to `counts/`, but the outputs live in `quantification/Output/`. The script also exists in two places (`alignment/processing/` and `quantification/Scripts/`, currently identical); keep one.
-
-- [ ] `slurm-build-index.sh` uses a micromamba root on scratch (`/cluster/scratch/$USER/sys-genomics/micromamba`); the other jobs use `<repo>/micromamba`.
-
-- [ ] `raw/scripts/download-fastq.sh` says two samples named "20w" are annotated as 19 wpc and are corrected, but the sample sheet still lists both (5668sTS, 5770sTS) as 20 wpc. Check which age is intended.
+- [ ] `preprocessing/scripts/raw/download-fastq.sh` says two samples named "20w" are annotated as 19 wpc and are corrected, but the sample sheet still lists both (5668sTS, 5770sTS) as 20 wpc. Check which age is intended.
 
 ------------------------------------------------------------------------
 

@@ -9,21 +9,16 @@
 # STEP=multiqc         : combine all FastQC reports (submitted by the launcher)
 set -euo pipefail
 
-cd "$SLURM_SUBMIT_DIR"                       # the quality_control folder
-FASTQ_DIR=../raw/fastq
-FASTQC_DIR=./fastqc
-MULTIQC_DIR=./multiqc
+: "${PROJECT_ROOT:?Submit using the preprocessing QC launcher}"
+: "${PIXI_BIN:?Submit using the preprocessing QC launcher}"
+FASTQ_DIR="$PROJECT_ROOT/raw/fastq"
+FASTQC_DIR="$PROJECT_ROOT/library_qc/fastqc"
+MULTIQC_DIR="$PROJECT_ROOT/library_qc/multiqc"
 STEP=${STEP:-fastqc}
 
-export MAMBA_ROOT_PREFIX="$SLURM_SUBMIT_DIR/../micromamba"
-export MAMBA_NO_RC=true
-export PATH="$HOME/.local/bin:$PATH"
-ENV_NAME=sys-genomics-align                  # check with: micromamba env list
-eval "$(micromamba shell hook -s bash)"
-micromamba activate "$ENV_NAME"
-
 if [[ "$STEP" == "multiqc" ]]; then
-    multiqc "$FASTQC_DIR" --outdir "$MULTIQC_DIR" --filename fastq_qc_report --force
+    "$PROJECT_ROOT/preprocessing/pixi.sh" run --as-is --offline multiqc \
+        "$FASTQC_DIR" --outdir "$MULTIQC_DIR" --filename fastq_qc_report --force
     exit 0
 fi
 
@@ -41,4 +36,5 @@ if [[ -s "$FASTQC_DIR/${sample}_fastqc.zip" ]]; then
 fi
 
 echo "Task $SLURM_ARRAY_TASK_ID: FastQC on $sample"
-fastqc --threads 1 --outdir "$FASTQC_DIR" "$fq"
+"$PROJECT_ROOT/preprocessing/pixi.sh" run --as-is --offline fastqc \
+    --threads 1 --outdir "$FASTQC_DIR" "$fq"

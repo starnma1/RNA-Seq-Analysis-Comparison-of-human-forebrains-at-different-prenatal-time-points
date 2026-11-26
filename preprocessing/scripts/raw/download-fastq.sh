@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Run this script from the raw folder as `bash ./scripts/download-fastq.sh`
+# Run from anywhere as `bash preprocessing/scripts/raw/download-fastq.sh`.
 # =============================================================================
 # Download raw FASTQs + ENA metadata records for prenatal human forebrain
 # RNA-seq from E-MTAB-6814 (Cardoso-Moreira et al. 2019, Nature 571:505).
@@ -9,8 +9,8 @@
 #            32 runs, single-end 100 nt, TruSeq Stranded mRNA (reverse strand).
 #
 # Usage:
-#   bash scripts/download-fastq.sh [OUTDIR]
-#   OUTDIR defaults to the current directory (the raw folder).
+#   bash preprocessing/scripts/raw/download-fastq.sh [OUTDIR]
+#   OUTDIR defaults to the project's raw folder.
 #
 # Output layout:
 #   OUTDIR/samples.tsv               sample sheet (run, name, biosample, wpc, sex)
@@ -40,7 +40,9 @@
 # =============================================================================
 set -euo pipefail
 
-OUTDIR="${1:-.}"
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+PROJECT_ROOT=$(cd -- "$SCRIPT_DIR/../../.." && pwd)
+OUTDIR="${1:-$PROJECT_ROOT/raw}"
 JOBS="${JOBS:-2}"
 PROTO="${PROTO:-https}"
 LIMIT_RATE="${LIMIT_RATE:-}"

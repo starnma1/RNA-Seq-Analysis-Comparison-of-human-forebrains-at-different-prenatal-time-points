@@ -5,12 +5,13 @@
 library(Rsubread)
 library(rtracklayer)
 
-bam_dir  <- "alignment/mapping"
-gtf_file <- "index/reference_genome/gencode.v50.basic.annotation.gtf"
-out_dir  <- "counts"
+project_root <- Sys.getenv("PROJECT_ROOT", unset = getwd())
+bam_dir  <- file.path(project_root, "alignment", "mapping")
+gtf_file <- file.path(project_root, "index", "reference_genome", "gencode.v50.basic.annotation.gtf")
+out_dir  <- file.path(project_root, "quantification", "Output")
 threads  <- as.integer(Sys.getenv("SLURM_CPUS_PER_TASK", "8"))
 
-dir.create(out_dir, showWarnings = FALSE)
+dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 
 # 1. Find the BAMs and derive sample names from their paths
 bams <- list.files(bam_dir, pattern = "\\.bam$", recursive = TRUE, full.names = TRUE)
