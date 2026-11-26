@@ -15,7 +15,12 @@ export TOKIO_WORKER_THREADS="$SLURM_CPUS_PER_TASK"
 cd "$PROJECT_ROOT/preprocessing"
 mkdir -p .pixi
 rm -f .pixi/preprocessing-ready.sha256
-./pixi.sh install --locked --concurrent-downloads "$SLURM_CPUS_PER_TASK" --concurrent-solves 1
+# Bioconductor data packages use Conda post-link scripts to download their
+# actual R package payloads.  Pixi skips those scripts by default, which can
+# leave a seemingly successful environment without GenomeInfoDbData.
+./pixi.sh install --locked --run-post-link-scripts \
+    --concurrent-downloads "$SLURM_CPUS_PER_TASK" --concurrent-solves 1
+
 ./pixi.sh run --as-is --offline bash -c '
     set -e
     STAR --version

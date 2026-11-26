@@ -173,6 +173,15 @@ bash preprocessing/scripts/reference/download-gtf.sh
 bash preprocessing/scripts/reference/submit-build-index.sh
 ```
 
+The downloaded UCSC FASTA is reduced to `chr1`–`chr22`, `chrX`, `chrY` and
+`chrM`; the chrY pseudoautosomal regions are masked, and GENCODE v50 basic is
+embedded in the STAR index. To rebuild alignments after replacing an index,
+force the array to discard existing BAMs:
+
+``` sh
+FORCE_REALIGN=1 bash preprocessing/scripts/alignment/submit-align-fastq.sh
+```
+
 ### 4. Alignment (Euler)
 
 ``` sh
@@ -225,7 +234,9 @@ The scripts, in the order `run_all.R` runs them:
 
 **Read QC.** FastQC (v0.13.0) and MultiQC. Quality was good across all samples; no trimming step is part of the pipeline. Two samples were examined in more detail and kept: ERR2598151 (lowest depth, highest duplication) and ERR2598121 (lowest assignment rate, mostly multimapping reads). Details in `QC_summary.md`.
 
-**Alignment.** STAR, against hg38 (UCSC FASTA), sorted BAM output, indexed with samtools. The index was built from the genome sequence only (no annotation).
+**Alignment.** STAR, against primary-chromosome hg38 (UCSC FASTA) with chrY
+pseudoautosomal regions masked and GENCODE v50 basic supplied during index
+generation, sorted BAM output, indexed with samtools.
 
 **Counting.** `Rsubread::featureCounts` with GENCODE v50 basic: exons summarised to genes (`gene_id`), reverse-stranded (`strandSpecific = 2`). Counted once with unique reads only and once including multimappers. The unique-read matrix (78,733 genes) is the starting point for all analyses; the comparison of the two is in `02_multi_vs_unique.R`.
 

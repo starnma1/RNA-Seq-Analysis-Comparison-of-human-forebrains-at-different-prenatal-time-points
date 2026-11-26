@@ -12,9 +12,21 @@ set -euo pipefail
 cd "$PROJECT_ROOT/index"
 mkdir -p star-index
 rm -rf _STARtmp                       # STAR refuses to start if a leftover one exists
+FASTA_FILE="./reference_genome/hg38.fa"
+GTF_FILE="./reference_genome/gencode.v50.basic.annotation.gtf"
+if [[ ! -s "$FASTA_FILE" ]]; then
+    echo "Error: filtered hg38 FASTA not found at $PWD/$FASTA_FILE; run download-genome.sh first." >&2
+    exit 1
+fi
+if [[ ! -s "$GTF_FILE" ]]; then
+    echo "Error: GENCODE GTF not found at $PWD/$GTF_FILE; run download-gtf.sh first." >&2
+    exit 1
+fi
 
 "$PROJECT_ROOT/preprocessing/pixi.sh" run --as-is --offline STAR \
      --runThreadN "$SLURM_CPUS_PER_TASK" \
      --runMode genomeGenerate \
      --genomeDir star-index \
-     --genomeFastaFiles ./reference_genome/hg38.fa
+     --genomeFastaFiles "$FASTA_FILE" \
+     --sjdbGTFfile "$GTF_FILE" \
+     --sjdbOverhang 100

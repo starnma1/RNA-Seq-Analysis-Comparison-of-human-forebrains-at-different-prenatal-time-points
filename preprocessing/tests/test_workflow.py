@@ -70,7 +70,11 @@ class WorkflowTest(unittest.TestCase):
         self.install()
         calls = self.calls.read_text()
         self.assertIn("install --manifest-path", calls)
-        self.assertIn("--locked --concurrent-downloads 8 --concurrent-solves 1", calls)
+        self.assertIn(
+            "--locked --run-post-link-scripts --concurrent-downloads 8 "
+            "--concurrent-solves 1",
+            calls,
+        )
         self.assertIn(str(self.preprocessing / ".runtime/cache/pixi"), calls)
         self.run_script("reference/submit-build-index.sh")
         (self.preprocessing / "pixi.lock").write_text("changed\n")
