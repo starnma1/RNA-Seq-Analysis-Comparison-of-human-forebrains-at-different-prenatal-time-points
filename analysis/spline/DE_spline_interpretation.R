@@ -55,9 +55,6 @@ figure_dir <- here("Results-presentation", "Figures")
 fit_file   <- file.path(result_dir, "spline_fit.rds")
 anno_file  <- here("analysis", "data", "gene_annotation.tsv")
 
-dir.create(result_dir, recursive = TRUE, showWarnings = FALSE)
-dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
-
 ###############################################################################
 
 # 1. Load the saved fit ----
@@ -77,11 +74,6 @@ spline_coefs <- sp$spline_coefs
 fdr_cutoff   <- sp$fdr_cutoff
 spline_df    <- sp$spline_df
 
-message(length(sig_genes), " age-varying genes (FDR < ", fdr_cutoff, ")")
-
-if (length(sig_genes) <= max(c(n_clusters, k_try))) {
-  stop("Too few significant genes (", length(sig_genes), ") to cluster.")
-}
 
 
 # 2. Trajectories on a fine wpc grid ----

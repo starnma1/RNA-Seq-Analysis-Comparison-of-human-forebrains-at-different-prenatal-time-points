@@ -1,0 +1,7 @@
+category	n_genes
+Genes tested	15217
+Linear trend in log(wpc), up	5114
+Linear trend in log(wpc), down	4734
+Significant curvature (quad + cubic)	4249
+Curvature but no linear trend	1123
+Linear trend only (no curvature)	6722

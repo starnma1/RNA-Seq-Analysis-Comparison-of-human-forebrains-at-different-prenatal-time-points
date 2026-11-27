@@ -6,7 +6,8 @@
 # log2 CPM, scaled per gene), with samples ordered by age.
 #
 # Inputs (analysis/data/)
-#   processed_count_matrix.csv   genes x samples, raw counts (from Data-pre-processing.R)
+#   plotting_counts.csv          genes x samples, raw counts, low-count filtered
+#                                (from Data-pre-processing.R)
 #   gene_annotation.tsv          gene_id, gene_name, gene_biotype, gene_length
 #   sample_metadata.tsv          run, sample_name, sex, wpc, ... (from 01_samples.R)
 #
@@ -29,7 +30,7 @@ dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Load data ----
 
-counts   <- as.matrix(read.csv(file.path(data_dir, "processed_count_matrix.csv"),
+counts   <- as.matrix(read.csv(file.path(data_dir, "plotting_counts.csv"),
                                row.names = 1, check.names = FALSE))
 genes    <- read.delim(file.path(data_dir, "gene_annotation.tsv"))
 metadata <- read.delim(file.path(data_dir, "sample_metadata.tsv"))

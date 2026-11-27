@@ -2,17 +2,20 @@
 # =============================================================================
 # Data-pre-processing.R
 #
-# Prepares the gene count matrix used by ALL downstream analyses
-# (PCA, heatmap, spline DE, trajectory clustering, GO enrichment), so every
-# analysis works on the same set of protein-coding genes.
+# Prepares the two protein-coding count matrices used downstream:
+#   - protein_coding_counts.csv: no low-count filter, for edgeR (spline DE,
+#     which filters with filterByExpr) and the CIBERSORTx mixture file
+#   - plotting_counts.csv: low-count filtered, for PCA and the heatmap
 #
 # Steps
 #   1. Read the unique-read featureCounts matrix.
 #   2. Rename columns to run IDs (ERR...) and order them like sample_metadata.tsv.
 #   3. Keep protein-coding genes only (Ensembl gene_biotype), as in
 #      Cardoso-Moreira et al. 2019.
-#   4. Remove genes with too few reads to be informative
-#      (keep genes with >= 10 counts in >= 3 samples).
+#   4. Save that matrix (protein_coding_counts.csv).
+#   5. Remove genes with too few reads to be informative
+#      (keep genes with >= 10 counts in >= 3 samples) and save
+#      plotting_counts.csv.
 #
 # Inputs
 #   quantification/Output/gene_counts_matrix_unique.csv
@@ -20,11 +23,13 @@
 #   analysis/data/sample_metadata.tsv
 #
 # Outputs (analysis/data/)
-#   processed_count_matrix.csv           genes x samples, raw integer counts;
-#                                        columns are run IDs (ERR...) in
+#   protein_coding_counts.csv            protein-coding genes x samples, raw integer
+#                                        counts, NO low-count filter (edgeR, CIBERSORTx)
+#   plotting_counts.csv                  same, after the low-count filter (PCA, heatmap)
+#                                        Both: columns are run IDs (ERR...) in
 #                                        sample_metadata.tsv order
 #   gene_annotation.tsv                  gene_id, gene_name, gene_biotype, gene_length
-#                                        for the genes kept
+#                                        for all protein-coding genes
 #   preprocessing_gene_numbers.tsv       how many genes remain after each step
 #
 # Notes
@@ -70,6 +75,8 @@ pc_ids <- genes %>%
 counts <- counts[rownames(counts) %in% pc_ids, ]
 n_protein_coding <- nrow(counts)
 
+# Unfiltered protein-coding matrix (edgeR filters itself with filterByExpr)
+write.csv(counts, file.path(data_dir, "protein_coding_counts.csv"))
 
 # ---- 3. Remove low-count genes ---------------------------------------------------
 keep   <- rowSums(counts >= min_count) >= min_samples
@@ -77,10 +84,12 @@ counts <- counts[keep, ]
 n_expressed <- nrow(counts)
 
 # ---- Save ------------------------------------------------------------------------
-write.csv(counts, file.path(data_dir, "processed_count_matrix.csv"))
+write.csv(counts, file.path(data_dir, "plotting_counts.csv"))
 
+# Annotation for every protein-coding gene, so names are found for genes in
+# either matrix
 genes %>%
-  filter(gene_id %in% rownames(counts)) %>%
+  filter(gene_biotype == "protein_coding") %>%
   write_tsv(file.path(data_dir, "gene_annotation.tsv"))
 
 tibble(

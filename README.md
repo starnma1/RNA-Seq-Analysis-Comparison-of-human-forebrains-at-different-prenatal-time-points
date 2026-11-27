@@ -25,7 +25,7 @@ Age is treated as a continuous variable. Each gene gets a smooth expression traj
 ## Data {#data}
 
 |  |  |
-|------------------------------------|------------------------------------|
+|----|----|
 | Source | ArrayExpress E-MTAB-6814 (raw reads from ENA) |
 | Tissue | Prenatal forebrain (prenatally this includes the midbrain; some samples are labelled "Brain") |
 | Samples | 32 runs: 11 female, 21 male |
@@ -52,7 +52,7 @@ flowchart LR
 ```
 
 | Step | Runs on | Script(s) | Main output |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | 1\. Download reads + metadata | Euler | `raw/scripts/download-fastq.sh` | `raw/fastq/*.fastq.gz`, `raw/samples.tsv`, `raw/ena/` |
 | 2\. Read quality control | Euler (Slurm) | `library_qc/scripts/submit-quality-control.sh` | `library_qc/multiqc/fastq_qc_report.html` |
 | 3\. Reference genome + STAR index | Euler (Slurm) | `index/scripts/download-genome.sh`, `download-gtf.sh`, `slurm-build-index.sh` | `index/star-index/` |
@@ -60,7 +60,7 @@ flowchart LR
 | 5\. Gene counting | Euler (Slurm) | `alignment/scripts/submit-feature-counting.sh` | `quantification/Output/gene_counts_*` |
 | 6\. Sample metadata | Local R | `analysis/exploratory/01_samples.R` | `analysis/data/sample_metadata.tsv` |
 | 7\. Read assignment QC | Local R | `analysis/exploratory/02_multi_vs_unique.R` | `Results-presentation/Tables/read_fate_unique.png` |
-| 8\. Protein-coding count matrix (used by all analyses) | Local R | `analysis/Data-pre-processing.R` | `analysis/data/processed_count_matrix.csv` |
+| 8\. Protein-coding count matrices | Local R | `analysis/Data-pre-processing.R` | `analysis/data/protein_coding_counts.csv` (unfiltered: edgeR, CIBERSORTx), `analysis/data/plotting_counts.csv` (low-count filtered: PCA, heatmap) |
 | 9\. Exploration (PCA, sex check, heatmap) | Local R | `analysis/exploratory/03_PCA.R`, `04_sex_check.R`, `05_heatmap.R` | `Results-presentation/Figures/pca_age_groups.png` |
 | 10\. Spline differential expression | Local R | `analysis/spline/DE_spline.R` | `Results-presentation/analysis-output/spline_fit.rds` |
 | 11\. Trajectory clustering + figures | Local R | `analysis/spline/DE_spline_interpretation.R` | `spline_DE_clusters.csv`, trajectory figures |
@@ -203,14 +203,14 @@ or `source("analysis/run_all.R")` in RStudio. Each script runs in a clean enviro
 The scripts, in the order `run_all.R` runs them:
 
 | Order | Script | Needs | Produces |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | 1 | `analysis/exploratory/01_samples.R` | `raw/samples.tsv`, `raw/ena/read_run.tsv` | `sample_metadata.tsv`, `sample_summary.tsv`, `sample_overview.png` |
 | 2 | `analysis/exploratory/02_multi_vs_unique.R` | featureCounts summary | `read_fate_unique.png`, `qc_featureCounts.png` |
-| 3 | `analysis/Data-pre-processing.R` | unique count matrix, annotation, metadata | `processed_count_matrix.csv`, `gene_annotation.tsv`, `preprocessing_gene_numbers.tsv` |
-| 4 | `analysis/exploratory/03_PCA.R` | output of step 3 | `pca_age_groups.png` |
+| 3 | `analysis/Data-pre-processing.R` | unique count matrix, annotation, metadata | `protein_coding_counts.csv`, `plotting_counts.csv`, `gene_annotation.tsv`, `preprocessing_gene_numbers.tsv` |
+| 4 | `analysis/exploratory/03_PCA.R` | `plotting_counts.csv` | `pca_age_groups.png` |
 | 5 | `analysis/exploratory/04_sex_check.R` | full annotated count table (XIST is non-coding) | XIST vs RPS4Y1 plot |
-| 6 | `analysis/exploratory/05_heatmap.R` | output of step 3 | `heatmap_top50_variable_genes.png` |
-| 7 | `analysis/spline/DE_spline.R` | output of step 3, metadata | `spline_fit.rds`, `spline_DE_all_genes.csv`, `qc_plots.pdf` |
+| 6 | `analysis/exploratory/05_heatmap.R` | `plotting_counts.csv` | `heatmap_top50_variable_genes.png` |
+| 7 | `analysis/spline/DE_spline.R` | `protein_coding_counts.csv`, metadata | `spline_fit.rds`, `spline_DE_all_genes.csv`, `qc_plots.pdf` |
 | 8 | `analysis/spline/DE_spline_interpretation.R` | `spline_fit.rds` | `spline_DE_clusters.csv`, elbow, preview, cluster and top-gene figures |
 | 9 | `analysis/GSEA/2_cluster_gsea.R` | `spline_fit.rds` | `first_vs_last_ora.*`, `trajectory_inc_vs_dec_ora.*` |
 | 10 | `analysis/GSEA/6_gene_set_analysis.R` | `spline_fit.rds`, `spline_DE_clusters.csv` | `fora_hallmark_results.csv`, `fora_gobp_results.csv`, four `fora_*.png` figures |
@@ -256,7 +256,7 @@ Each group is tested for over-representation of GO Biological Process terms with
 ### Figures (`Results-presentation/Figures/`)
 
 | File | Shows |
-|------------------------------------|------------------------------------|
+|----|----|
 | `sample_overview.png` | Every sample by age and sequencing depth, coloured by sex |
 | `quality-control/fastqc_*.png`, `qc_featureCounts.png` | Read quality and read assignment per sample |
 | `pca_age_groups.png` | PCA of samples coloured by age, with age-group means |
@@ -270,7 +270,7 @@ Each group is tested for over-representation of GO Biological Process terms with
 ### Tables (`Results-presentation/analysis-output/` and `Tables/`)
 
 | File | Contents |
-|------------------------------------|------------------------------------|
+|----|----|
 | `spline_fit.rds` | Fitted edgeR model, design, spline basis, metadata and test results (input for later scripts) |
 | `spline_DE_all_genes.csv` | Spline test result for every tested gene (logCPM, F, p-value, FDR) |
 | `spline_DE_clusters.csv` | Age-varying genes with their trajectory cluster |

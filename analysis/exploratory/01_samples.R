@@ -87,7 +87,7 @@ p <- ggplot(metadata) +
   
   geom_point(aes(x = wpc, y = read_count / 1e6, colour = sex),
              size = 3,
-             position = position_jitter(width = 0.15, height = 0)) +
+             position = position_jitter(width = 0.15, height = 0, seed = 1)) +
   
   scale_colour_manual(values = c(female = "#eb6834", male = "#2a78d6")) +
   scale_x_continuous(breaks = sort(unique(metadata$wpc))) +

@@ -15,7 +15,8 @@
 #      developmental order.
 #
 # Inputs (analysis/data/)
-#   processed_count_matrix.csv   genes x samples, raw counts (from Data-pre-processing.R)
+#   plotting_counts.csv          genes x samples, raw counts, low-count filtered
+#                                (from Data-pre-processing.R)
 #   gene_annotation.tsv          gene names and biotypes
 #   sample_metadata.tsv          run, wpc, sex, ... (from sample_metadata.R)
 #
@@ -35,7 +36,7 @@ dir.create(figure_dir, showWarnings = FALSE, recursive = TRUE)
 
 
 # Load in the Data ----
-counts  <- read.csv(file.path(count_dir, "processed_count_matrix.csv"),
+counts  <- read.csv(file.path(count_dir, "plotting_counts.csv"),
                     row.names = 1, check.names = FALSE) %>% as.matrix()
 
 genes   <- read.csv(file.path(count_dir, "gene_annotation.tsv"), sep = "\t")

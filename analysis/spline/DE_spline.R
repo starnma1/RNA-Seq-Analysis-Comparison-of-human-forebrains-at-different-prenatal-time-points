@@ -8,7 +8,7 @@
 # flat. Age-varying genes are then clustered by the shape of their trajectory.
 #
 # Steps
-#   1. Load the protein-coding count matrix + sample metadata; match
+#   1. Load the unfiltered protein-coding count matrix + sample metadata; match
 #      columns to metadata rows.
 #   2. Check every sample is present and put columns in metadata order.
 #   3. Design: intercept + ns(wpc, df = 3)
@@ -17,8 +17,10 @@
 #   6. Save the fit (for DE_spline_interpretation.R) and the results table.
 #
 # Inputs
-#   analysis/data/processed_count_matrix.csv   protein-coding genes x samples, raw
-#                                              counts (from Data-pre-processing.R)
+#   analysis/data/protein_coding_counts.csv    protein-coding genes x samples, raw
+#                                              counts, no low-count filter (from
+#                                              Data-pre-processing.R; filterByExpr
+#                                              below is the only filter)
 #   analysis/data/sample_metadata.tsv          run, sample_name, wpc, sex, ...
 #
 # Outputs (Results-presentation/analysis-output/)
@@ -43,7 +45,7 @@ adjust_sex <- FALSE   # include sex as a covariate
 fdr_cutoff <- 0.05
 n_clusters <- 6      # check the elbow plot in qc_plots.pdf and adjust
 
-count_file <- here("analysis", "data", "processed_count_matrix.csv")   # protein-coding only
+count_file <- here("analysis", "data", "protein_coding_counts.csv")   # protein-coding, unfiltered
 meta_file  <- here("analysis", "data", "sample_metadata.tsv")
 result_dir <- here("Results-presentation", "analysis-output")
 figure_dir <- here("Results-presentation", "Figures")
