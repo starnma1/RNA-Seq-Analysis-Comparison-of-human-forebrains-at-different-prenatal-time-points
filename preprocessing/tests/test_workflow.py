@@ -109,6 +109,12 @@ class WorkflowTest(unittest.TestCase):
         self.assertIn(f"|{self.root / 'alignment'}|{self.root}|", calls)
         for tool in ("fastqc", "multiqc", "STAR", "samtools", "Rscript"):
             self.assertIn(f"--as-is --offline {tool}", calls)
+        self.assertIn(
+            f"--quantMode GeneCounts --readFilesIn {self.root / 'raw/fastq/sample.fastq.gz'} "
+            "--readFilesCommand zcat --outSAMtype BAM SortedByCoordinate "
+            f"--outFileNamePrefix {self.root / 'alignment/mapping/sample'}/",
+            calls,
+        )
 
 
 if __name__ == "__main__":

@@ -11,4 +11,6 @@ if (( ${#files[@]} == 0 )); then
 fi
 cd "$PROJECT_ROOT/alignment"
 mkdir -p logs
-sbatch --array=0-$((${#files[@]}-1))%5 "$SCRIPT_DIR/slurm-align-fastq.sh"
+export FORCE_REALIGN="${FORCE_REALIGN:-0}"
+sbatch --export=ALL,FORCE_REALIGN="$FORCE_REALIGN" \
+    --array=0-$((${#files[@]}-1))%5 "$SCRIPT_DIR/slurm-align-fastq.sh"

@@ -191,6 +191,12 @@ bash preprocessing/scripts/alignment/quick-check-bams.sh
 
 Each sample gets `alignment/mapping/<run>_<sample_name>/` containing a sorted, indexed BAM and STAR's `Log.final.out`. To archive the mapping folder afterwards: `bash preprocessing/scripts/alignment/submit-package-outputs.sh` (zstd-compressed tarball).
 
+STAR uses the GTF annotation embedded in the index for splice junctions and
+produces `ReadsPerGene.out.tab` for a strandedness check. For this
+reverse-stranded library, compare column 4 with column 3; the downstream
+featureCounts step reads the same GTF path. Rebuild the index and realign if
+the GTF contents change.
+
 ### 5. Gene counting (Euler)
 
 From the repository root:

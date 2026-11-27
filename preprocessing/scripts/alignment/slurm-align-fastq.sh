@@ -23,17 +23,23 @@ fi
 sample=$(basename "$fq" .fastq.gz)
 out="$OUT_DIR/$sample"
 
-if [[ -s "$out/Aligned.sortedByCoord.out.bam" ]]; then
+if [[ "${FORCE_REALIGN:-0}" != 1 && -s "$out/Aligned.sortedByCoord.out.bam" ]]; then
     echo "Skipping $sample (already aligned)"
     exit 0
 fi
 
 echo "Task $SLURM_ARRAY_TASK_ID: aligning $sample"
+if [[ "${FORCE_REALIGN:-0}" == 1 ]]; then
+    rm -rf "$out"
+fi
 mkdir -p "$out"
 rm -rf "$out/_STARtmp"                # leftover from a failed attempt
 
+# --quantMode GeneCounts Helps double-check strandedness, should expect read to be on opposite strand to gene
+
 "$PROJECT_ROOT/preprocessing/pixi.sh" run --as-is --offline STAR --genomeDir "$GENOME_DIR" \
      --runThreadN "$SLURM_CPUS_PER_TASK" \
+     --quantMode GeneCounts \
      --readFilesIn "$fq" \
      --readFilesCommand zcat \
      --outSAMtype BAM SortedByCoordinate \
