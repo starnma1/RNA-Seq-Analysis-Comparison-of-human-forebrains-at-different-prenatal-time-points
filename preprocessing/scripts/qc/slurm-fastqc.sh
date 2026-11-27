@@ -5,22 +5,12 @@
 #SBATCH --time=02:00:00
 #SBATCH --output=logs/fastqc-%A_%a.log
 
-# STEP=fastqc (default): one array task per FASTQ file
-# STEP=multiqc         : combine all FastQC reports (submitted by the launcher)
 set -euo pipefail
 
-: "${PROJECT_ROOT:?Submit using the preprocessing QC launcher}"
-: "${PIXI_BIN:?Submit using the preprocessing QC launcher}"
+: "${PROJECT_ROOT:?Submit using the FastQC launcher}"
+: "${PIXI_BIN:?Submit using the FastQC launcher}"
 FASTQ_DIR="$PROJECT_ROOT/raw/fastq"
 FASTQC_DIR="$PROJECT_ROOT/library_qc/fastqc"
-MULTIQC_DIR="$PROJECT_ROOT/library_qc/multiqc"
-STEP=${STEP:-fastqc}
-
-if [[ "$STEP" == "multiqc" ]]; then
-    "$PROJECT_ROOT/preprocessing/pixi.sh" run --as-is --offline multiqc \
-        "$FASTQC_DIR" --outdir "$MULTIQC_DIR" --filename fastq_qc_report --force
-    exit 0
-fi
 
 FILES=("$FASTQ_DIR"/*.fastq.gz)
 fq="${FILES[$SLURM_ARRAY_TASK_ID]:-}"

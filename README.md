@@ -41,23 +41,26 @@ The sample sheet is `raw/samples.tsv` (run, sample name, BioSample, wpc, sex). A
 
 ``` mermaid
 flowchart LR
-  A[Download FASTQs<br/>ENA] --> B[Read QC<br/>FastQC + MultiQC]
+  A[Download FASTQs<br/>ENA] --> B[FastQC]
   A --> D[Align<br/>STAR]
   C[Reference<br/>hg38 + GENCODE v50] --> D
   D --> E[Count reads per gene<br/>featureCounts]
-  E --> F[Sample metadata,<br/>QC tables, PCA]
-  E --> G[Spline DE<br/>edgeR]
-  G --> H[Trajectory clusters<br/>k-means]
-  G --> I[Increasing / decreasing<br/>GO enrichment]
+  B --> F[Integrated quality report<br/>MultiQC]
+  D --> F
+  E --> F
+  E --> G[Sample metadata,<br/>QC tables, PCA]
+  G --> H[Spline DE<br/>edgeR]
+  H --> I[Trajectory clusters<br/>k-means]
+  H --> J[Increasing / decreasing<br/>GO enrichment]
 ```
 
 | Step | Runs on | Script(s) | Main output |
 |------------------|------------------|------------------|------------------|
 | 1\. Download reads + metadata | Euler | `preprocessing/scripts/raw/download-fastq.sh` | `raw/fastq/*.fastq.gz`, `raw/samples.tsv`, `raw/ena/` |
-| 2\. Read quality control | Euler (Slurm) | `preprocessing/scripts/qc/submit-quality-control.sh` | `library_qc/multiqc/fastq_qc_report.html` |
-| 3\. Reference genome + STAR index | Euler (Slurm) | `preprocessing/scripts/reference/` | `index/star-index/` |
-| 4\. Alignment | Euler (Slurm) | `preprocessing/scripts/alignment/submit-align-fastq.sh` | `alignment/mapping/<sample>/` (BAM + `Log.final.out`) |
-| 5\. Gene counting | Euler (Slurm) | `preprocessing/scripts/counting/submit-feature-counting.sh` | `quantification/Output/gene_counts_*` |
+| 2\. Reference genome + STAR index | Euler (Slurm) | `preprocessing/scripts/reference/` | `index/star-index/` |
+| 3\. Alignment | Euler (Slurm) | `preprocessing/scripts/alignment/submit-align-fastq.sh` | `alignment/mapping/<sample>/` (BAM + STAR logs) |
+| 4\. Gene counting | Euler (Slurm) | `preprocessing/scripts/counting/submit-feature-counting.sh` | `quantification/Output/gene_counts_*` |
+| 5\. Integrated quality report | Euler (Slurm) | `preprocessing/scripts/qc/submit-fastqc.sh`, `preprocessing/scripts/qc/submit-multiqc.sh` | `library_qc/multiqc/fastq_qc_report.html` |
 | 6\. Sample metadata | Local R | `analysis/exploratory/01_samples.R` | `analysis/data/sample_metadata.tsv` |
 | 7\. Read assignment QC | Local R | `analysis/exploratory/02_multi_vs_unique.R` | `Results-presentation/Tables/read_fate_unique.png` |
 | 8\. Protein-coding count matrix (used by all analyses) | Local R | `analysis/data-pre-processing/Data-pre-processing.R` | `analysis/data/processed_count_matrix.csv` |
@@ -108,7 +111,7 @@ are generally not tracked; selected QC reports and STAR summary logs are.
 
 ## Setup {#setup}
 
-Raw-data processing (steps 1–5) runs on the ETH **Euler** cluster. The R analysis (steps 6–12) runs locally in RStudio.
+Raw-data processing (steps 1–5) runs on the ETH **Euler** cluster. The R analysis (steps 6–13) runs locally in RStudio.
 
 ### Euler: Pixi preprocessing environment
 
@@ -157,15 +160,7 @@ bash preprocessing/scripts/raw/download-fastq.sh
 
 Writes `samples.tsv`, the ENA metadata in `ena/`, and FASTQs in `fastq/`. The script throttles parallel downloads, resumes partial files, verifies every file against its ENA MD5 checksum, and can be re-run safely. Options are set with environment variables (`JOBS`, `PROTO`, `LIMIT_RATE`, `DRY_RUN=1`, `SKIP_MD5=1`).
 
-### 2. Read quality control (Euler)
-
-``` sh
-bash preprocessing/scripts/qc/submit-quality-control.sh
-```
-
-Runs FastQC as a Slurm array (one task per FASTQ), then MultiQC once all tasks finish. Report: `library_qc/multiqc/fastq_qc_report.html`. Interpretation: `Results-presentation/Figures/quality-control/QC_summary.md`.
-
-### 3. Reference and STAR index (Euler)
+### 2. Reference and STAR index (Euler)
 
 ``` sh
 bash preprocessing/scripts/reference/download-genome.sh
@@ -182,7 +177,7 @@ force the array to discard existing BAMs:
 FORCE_REALIGN=1 bash preprocessing/scripts/alignment/submit-align-fastq.sh
 ```
 
-### 4. Alignment (Euler)
+### 3. Alignment (Euler)
 
 ``` sh
 bash preprocessing/scripts/alignment/submit-align-fastq.sh
@@ -197,7 +192,7 @@ reverse-stranded library, compare column 4 with column 3; the downstream
 featureCounts step reads the same GTF path. Rebuild the index and realign if
 the GTF contents change.
 
-### 5. Gene counting (Euler)
+### 4. Gene counting (Euler)
 
 From the repository root:
 
@@ -207,7 +202,33 @@ bash preprocessing/scripts/counting/submit-feature-counting.sh
 
 Runs `preprocessing/scripts/counting/featureCounting.R`. It writes count matrices directly to `quantification/Output/`: once with uniquely mapped reads only and once including multimapping reads. Logs go to `alignment/logs/`.
 
-### 6–12. Analysis (local, RStudio)
+### 5. Quality control and integrated report (Euler)
+
+FastQC can be run at any time after the FASTQs are available:
+
+``` sh
+bash preprocessing/scripts/qc/submit-fastqc.sh
+```
+
+After index creation, alignment, feature counting, and FastQC have completed,
+submit the integrated report:
+
+``` sh
+bash preprocessing/scripts/qc/submit-multiqc.sh
+```
+
+The launcher checks that every FASTQ has corresponding FastQC, STAR, and
+featureCounts outputs before submitting MultiQC. The report includes FastQC,
+STAR alignment and gene-count summaries, featureCounts assignment statistics
+for both counting modes, STAR splice-junction summaries, and STAR index build
+metadata. The existing featureCounts summary files are left unchanged; a
+temporary `.summary` copy is used for each mode in MultiQC's featureCounts
+parser, with the multimapper-mode sample labels suffixed to keep both
+summaries distinct.
+Report: `library_qc/multiqc/fastq_qc_report.html`.
+Interpretation: `Results-presentation/Figures/quality-control/QC_summary.md`.
+
+### 6–13. Analysis (local, RStudio)
 
 To run everything in one go, from the project root:
 

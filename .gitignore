@@ -40,3 +40,7 @@ alignment/mapping/*/*
 # Personal files
 .Rhistory
 .RData
+
+# Compiled python
+__pycache__/
+*.pyc
